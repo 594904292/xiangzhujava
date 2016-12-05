@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+  	android:background="#f5f5f5"
+    android:padding="1dp" >
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:padding="1dp" >
+  <ImageView
+      android:id="@+id/infotag"
+      android:layout_width="wrap_content"
+      android:layout_height="fill_parent"
+      android:scaleType="fitXY"
+      android:src="@mipmap/dynamic_info_left" />
+  <com.bbxiaoqu.comm.widget.RoundAngleImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="8dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"
+        android:visibility="gone" />
+ 
+
+    <TextView
+        android:id="@+id/infocatagroy"
+        android:layout_width="22dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:scaleType="fitXY"
+        android:text="卖"
+        android:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/senduser"
+        style="@style/TextViewItem_gray"
+         android:layout_toRightOf="@id/infocatagroy"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"       
+        android:text="user" />
+
+    <TextView
+        android:id="@+id/sendtimer"
+        style="@style/TextViewItem_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="time" />
+
+
+
+  
+
+    <RelativeLayout
+         android:id="@+id/main_row"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/senduser"
+
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentStart="true">
+
+      <TextView
+          android:id="@+id/sendcontent"
+          android:layout_marginTop="5dp"
+          android:paddingLeft="8px"
+          style="@style/TextViewItem_body"
+          android:layout_width="fill_parent"
+          android:layout_height="match_parent"
+          android:layout_toLeftOf="@+id/status"
+
+          android:text="正文" />
+
+
+          <TextView
+            android:id="@+id/status"
+            style="@style/TextViewItem_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="未结束"
+              android:layout_marginTop="20dp" />
+    </RelativeLayout>
+
+  <RelativeLayout
+      android:id="@+id/endrow"
+      android:layout_below="@+id/main_row"
+      android:layout_width="fill_parent"
+      android:layout_height="30dp">
+    <TextView
+        android:id="@+id/tag1"
+        style="@style/TextViewItem_gray"
+        android:paddingLeft="8px"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_height="30dp"
+        android:text="关注数:0" />
+    <TextView
+        android:id="@+id/tag2"
+        android:layout_toRightOf="@id/tag1"
+        style="@style/TextViewItem_gray"
+        android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_height="30dp"
+        android:text="评论数:0" />
+  <TextView
+      android:id="@+id/sendaddress"
+      android:layout_marginTop="5dp"
+      style="@style/TextViewItem_gray"
+      android:paddingLeft="8px"
+      android:layout_width="fill_parent"
+      android:layout_height="30dp"
+      android:layout_alignParentBottom="true"
+      android:text="地址"
+      android:gravity="right"
+      android:layout_marginBottom="0dp" />
+
+</RelativeLayout>
+
+</RelativeLayout>
+</RelativeLayout>

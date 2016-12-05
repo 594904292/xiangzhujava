@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/top_menu"
+    style="@style/xz_top_menu_style" >
+    <FrameLayout
+        android:id="@+id/left_head_container"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:paddingLeft="@dimen/xz_top_margin_size"
+        android:paddingRight="@dimen/xz_top_margin_size">
+        <ImageView
+            android:id="@+id/top_menu_left_image"
+            android:layout_width="@dimen/xz_head_size"
+            android:layout_height="@dimen/xz_head_size"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/xz_laba_icon"
+            android:padding="2.0dip"
+            android:scaleType="fitXY" />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/right_head_container"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="@dimen/xz_top_margin_size"
+        android:paddingRight="@dimen/xz_top_margin_size">
+        <ImageView
+            android:id="@+id/top_menu_right_image"
+            android:layout_width="@dimen/xz_sou_size"
+            android:layout_height="@dimen/xz_sou_size"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/xz_sou_icon"
+            android:padding="2.0dip"
+            android:scaleType="fitXY" />
+    </FrameLayout>
+    <com.bbxiaoqu.comm.widget.BadgeView
+        android:id="@+id/headtop_left_count"
+        style="@style/top_update_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2.0dip"
+        android:layout_marginTop="5.0dip"
+        android:layout_toRightOf="@id/top_head_container"
+        android:background="@drawable/badge_titlebar"
+        android:visibility="gone"/>
+    <RelativeLayout
+        android:id="@+id/title_click_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+         >
+        <TextView
+            android:id="@+id/title"
+            style="@style/PageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

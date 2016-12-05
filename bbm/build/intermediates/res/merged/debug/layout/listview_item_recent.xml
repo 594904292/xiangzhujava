@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/root_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#ffffff"
+                 >
+    <RelativeLayout
+        android:id="@+id/head_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="#ffffff"
+        android:paddingBottom="1dp" >
+
+    <RelativeLayout
+        android:id="@+id/col1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <com.bbxiaoqu.comm.widget.XCRoundImageView
+            android:id="@+id/userhead"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/dynamic_info_icon" />
+        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/col2"
+        android:layout_toRightOf="@+id/col1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+       >
+
+        <RelativeLayout
+            android:id="@+id/row1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_centerVertical="true"
+                style="@style/TextViewItem_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5px"
+                android:text="用户137"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/messnum"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/username"
+                android:layout_marginLeft="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#7f7f7f"
+                android:textSize="12sp"
+                android:background="@drawable/text_view_border"
+                android:layout_marginTop="3dp"/>
+
+            <TextView
+                android:id="@+id/lastchattimer"
+                android:layout_centerVertical="true"
+                style="@style/TextViewItem_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="2015-10-30 10:09:22"
+                android:textSize="12sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/row2"
+            android:layout_below="@+id/row1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+             >
+
+            <TextView
+              android:id="@+id/evaluate"
+                 android:layout_marginTop="0dp"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:ellipsize="none"
+              android:maxLines="100"
+              android:scrollHorizontally="false"
+              android:text="@string/tip"
+              android:textColor="#7f7f7f"
+              android:textSize="14sp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/end_view"
+            android:layout_below="@+id/col2"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="4dp"
+            android:layout_height="1dp"
+            android:background="#cccccc"
+            >
+        </RelativeLayout>
+
+</RelativeLayout>
+
+</RelativeLayout>
+

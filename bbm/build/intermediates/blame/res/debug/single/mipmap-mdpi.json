@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\icon_home_nor.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-mdpi\\icon_home_nor.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_pulltorefresh_arrow.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-mdpi\\ic_pulltorefresh_arrow.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\simple_notification_icon.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-mdpi\\simple_notification_icon.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\wxpyq.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-mdpi\\wxpyq.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\wx.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-mdpi\\wx.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\daily_maintab_toolbar_down.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-mdpi\\daily_maintab_toolbar_down.png"
+    }
+]

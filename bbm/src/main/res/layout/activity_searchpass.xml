@@ -1,0 +1,116 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/activity_bg_color"
+    android:orientation="vertical" >
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/top_bar" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp">
+
+
+
+            <EditText
+                android:id="@+id/tlephoneRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/edit_common_text"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@mipmap/tel"
+                android:hint="用户名/手机号"
+                android:singleLine="true"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+
+
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/top"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                >
+                <EditText
+                    android:id="@+id/authoncode_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/bg_edittext"
+                    android:drawableLeft="@mipmap/register_icon_authcode"
+                    android:hint="验证码"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:drawablePadding="8dp"
+                    />
+
+                <Button
+                    android:id="@+id/btn_verf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/authcode"
+                    android:background="@mipmap/login_btn_bg_authcode"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:textSize="14sp"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center|center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+
+            <Button
+                android:id="@+id/nextbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_red_bg"
+                android:paddingBottom="10dp"
+                android:paddingLeft="80dp"
+                android:paddingRight="80dp"
+                android:paddingTop="10dp"
+                android:text="下一步"
+                android:textColor="@color/btn_common_text"
+                android:textSize="18sp" />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

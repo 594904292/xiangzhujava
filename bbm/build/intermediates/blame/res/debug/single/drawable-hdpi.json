@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bdspeech_help_pressed_deep.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\drawable-hdpi\\bdspeech_help_pressed_deep.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bdspeech_mask_light.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\drawable-hdpi\\bdspeech_mask_light.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bdspeech_close_v2.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\drawable-hdpi\\bdspeech_close_v2.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_full_open_on_phone.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\drawable-hdpi\\common_full_open_on_phone.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bdspeech_help_light.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\drawable-hdpi\\bdspeech_help_light.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bdspeech_help_pressed_light.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\drawable-hdpi\\bdspeech_help_pressed_light.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_ic_googleplayservices.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\drawable-hdpi\\common_ic_googleplayservices.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bdspeech_mask_deep.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\drawable-hdpi\\bdspeech_mask_deep.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bdspeech_help_deep.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\drawable-hdpi\\bdspeech_help_deep.png"
+    }
+]

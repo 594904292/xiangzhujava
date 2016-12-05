@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="23"
+    density="xxhdpi"
+    format="8"
+    plugin-version="2.2.2"
+    timestamp="28301716853466"
+    token="-1009276222268453997"
+    verifier="COLD_SWAP_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="0" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="0" />
+    <task
+        name="verifier"
+        duration="0" />
+
+    <artifact
+        location="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
+
+    <build
+        timestamp="28184290675498"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\outputs\apk\bbm-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="28301716853466"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
+    </build>
+
+</instant-run>

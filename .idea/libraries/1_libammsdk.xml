@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="1_libammsdk">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bbm/src/main/jniLibs/libammsdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/white"
+    >
+
+    <EditText
+        android:id="@+id/dialog_edit1"
+        android:layout_height="40dp"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scrollHorizontally="true"
+        android:capitalize="none"
+        android:gravity="fill_horizontal"
+        android:background="@drawable/pop_edittext"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/dialog_edit2"
+        android:layout_height="40dp"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scrollHorizontally="true"
+        android:capitalize="none"
+        android:gravity="fill_horizontal"
+        android:background="@drawable/pop_edittext"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+</LinearLayout>
+

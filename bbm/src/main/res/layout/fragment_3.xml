@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/activity_bg_color" >
+<RelativeLayout
+    android:id="@+id/root_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/activity_bg_color" >
+    <LinearLayout
+        android:id="@+id/searchbar"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <SearchView
+            android:id="@+id/sv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionGo" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/body1"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/searchbar"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.bbxiaoqu.comm.widget.RoundAngleImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/myheadface"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/myusername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="dzyang"
+            android:layout_toRightOf="@id/myheadface"
+            android:textSize="18dp"/>
+        <ImageView
+            android:id="@+id/mysex"
+            android:layout_toRightOf="@id/myusername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+
+            />
+        <ImageView
+            android:id="@+id/jiangicon"
+            android:layout_toLeftOf="@id/order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@mipmap/xz_jiang_icon"/>
+
+        <TextView
+            android:id="@+id/order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="1"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="#c91717"
+            android:textSize="20dp"
+            android:textIsSelectable="false"/>
+
+        <TextView
+            android:id="@+id/txt_order_desc"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第一名"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/darkgray"/>
+
+    </RelativeLayout>
+    <RelativeLayout android:id="@+id/item_bg"
+                    android:layout_below="@+id/body1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="20dip"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+        >
+        </RelativeLayout>
+    <RelativeLayout android:id="@+id/item_root"
+                  android:layout_below="@+id/item_bg"
+                  android:layout_width="fill_parent"
+                  android:layout_height="60dip"
+                  android:orientation="horizontal"
+                    android:background="@android:color/white"
+                    android:layout_centerVertical="true"
+                  >
+        <TextView android:id="@+id/tv_1"
+                  android:text="用户"
+                  android:textColor="#ABABAB"
+                  android:layout_centerVertical="true"
+                  android:layout_marginLeft="30dp"
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:textSize="15dp"/>
+        <TextView android:id="@+id/tv_2"
+                  android:text="评价星级"
+                  android:textColor="#ABABAB"
+                  android:layout_centerVertical="true"
+                  android:layout_toLeftOf="@+id/tv_3"
+                  android:drawableRight="@mipmap/xz_xia_icon"
+                  android:layout_marginRight="50dp"
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:textSize="15dp"/>
+
+        <TextView android:id="@+id/tv_3"
+                  android:text="评价次数"
+                  android:textColor="#ABABAB"
+                  android:layout_marginRight="20dp"
+                  android:layout_centerVertical="true"
+                  android:drawableRight="@mipmap/xz_xia_icon"
+                  android:layout_alignParentRight="true"
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:textSize="15dp"/>
+    </RelativeLayout >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/item_root"
+        android:background="@android:color/white"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical" >
+       <ListView
+            android:id="@+id/orderlv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#00000000"
+            android:layout_below="@+id/title_bar" />
+    </LinearLayout>
+</RelativeLayout>
+    <com.bbxiaoqu.ui.LoadingView
+        android:id="@+id/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

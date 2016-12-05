@@ -1,0 +1,203 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/root_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical" >
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="180dp"
+                android:id="@+id/body1"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:background="@mipmap/xz_tu_images">
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="180dp" >
+                    <ImageSwitcher
+                        android:id="@+id/imageSwitcher1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    </ImageSwitcher>
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="180dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:id="@+id/viewGroup"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="0dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal" >
+                        </LinearLayout>
+                    </RelativeLayout>
+                </FrameLayout>
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/body2"
+                android:layout_below="@+id/body1"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:background="@drawable/main_tel_linearlayout"
+                android:showDividers="middle"
+                android:divider="@drawable/spacer_medium">
+                <LinearLayout
+                    android:layout_weight="1.0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal">
+                    <Button
+                        android:id="@+id/sos_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/xz_si_icon"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginTop="30dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="求帮助"
+                        android:id="@+id/textView3"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1.0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <Button
+                    android:id="@+id/can_sos_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/xz_yuan_icon"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="30dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="我能帮"
+                        android:id="@+id/textView4"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/body3"
+                android:layout_below="@+id/body2"
+                android:background="@color/white"
+                >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:layout_marginTop="20dp">
+                <LinearLayout
+                    android:id="@+id/line_1"
+                    android:layout_weight="1.0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <Button
+                    android:id="@+id/tel1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/xz_da_icon"
+                    android:textColor="@color/btn_common_text"
+                    android:layout_gravity="center_horizontal" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="110报警"
+                        android:id="@+id/textView5"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginTop="5dp" />
+                </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/line_2"
+                        android:layout_weight="1.0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/tel2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@mipmap/xz_ji_icon"
+                            android:textColor="@color/btn_common_text"
+                            android:layout_gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="120急救"
+                            android:layout_gravity="center_horizontal|bottom"
+                            android:layout_marginTop="10dp" />
+                    </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/line_3"
+                            android:layout_weight="1.0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <Button
+                                android:id="@+id/tel3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@mipmap/xz_ren_icon"
+                                android:textColor="@color/btn_common_text"
+                                android:layout_gravity="center_horizontal" />
+                            <TextView
+                                android:id="@+id/tel3_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:text="紧急联系人"
+                                android:layout_gravity="center_horizontal|bottom"
+                                android:layout_marginTop="5dp" />
+                        </LinearLayout>
+            </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <com.bbxiaoqu.ui.LoadingView
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="72dp"
+  	android:background="#f5f5f5"
+    android:padding="1dp" >
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="70dp"
+    android:background="#FFFFFF"
+    android:padding="1dp" >
+
+
+
+    <com.bbxiaoqu.comm.widget.XCRoundImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/userhead"
+        android:layout_centerVertical="true"
+        />
+
+
+
+
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:text="dzyang"
+        android:layout_toRightOf="@id/userhead"
+        android:textSize="18dp"/>
+
+
+</RelativeLayout>     
+
+</RelativeLayout>

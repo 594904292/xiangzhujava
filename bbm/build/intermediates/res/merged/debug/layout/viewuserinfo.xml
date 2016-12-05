@@ -1,0 +1,157 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/activity_bg_color"
+    android:orientation="vertical" >
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/top_menu_user" />
+
+    <RelativeLayout
+        android:id="@+id/body1"
+        android:layout_below="@+id/searchbar"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:id="@+id/bg"
+            android:background="@mipmap/xz_dq_icon"/>
+
+        <com.bbxiaoqu.comm.widget.XCRoundImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@mipmap/xz_tou_icon"
+            android:layout_marginTop="75dp"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/body2"
+        android:layout_below="@+id/body1"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="随风"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/telphone"
+            android:layout_below="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="158****811"
+            android:textColor="@color/gray"
+            android:gravity="center_horizontal"
+            android:textSize="14dp"/>
+
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_below="@+id/telphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="0"
+            android:textColor="@color/gray"
+            android:textSize="14dp"/>
+
+
+    </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+
+                <TableLayout
+                    android:id="@+id/tableLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*" >
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingTop="8dp"
+
+                    android:text="私聊"
+                    android:textColor="@color/btn_common_text"
+                    android:textSize="18sp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@mipmap/xz_w2_icon"/>
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingTop="8dp"
+
+                    android:text="关注"
+                    android:textColor="@color/btn_common_text"
+                    android:textSize="18sp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@mipmap/xz_w3_icon"/>
+
+            </TableRow>
+                </TableLayout>
+
+        </LinearLayout>
+
+
+    <android.support.v4.app.FragmentTabHost
+        android:id="@+id/usertabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0"/>
+    </android.support.v4.app.FragmentTabHost>
+    <FrameLayout
+        android:id="@+id/realtabcontent"
+        android:layout_below="@+id/top_menu_tag"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:background="@color/buttom_nav_bg"/>
+
+
+
+</LinearLayout>

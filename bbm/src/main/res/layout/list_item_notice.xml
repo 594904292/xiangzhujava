@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent"
+    android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/notic_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/notic_img"
+        android:background="@drawable/image_radius"
+        />
+
+    <TextView
+        android:id="@+id/notice_catagory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/notic_img"
+        android:text="TextView"
+         android:textColor="@color/gray"/>
+
+    <TextView
+        android:id="@+id/notice_content"
+        android:layout_toRightOf="@+id/notic_img"
+        android:layout_below="@+id/notice_catagory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="TextView"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/notice_time"
+        android:layout_toRightOf="@+id/notic_img"
+        android:layout_below="@id/notice_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="TextView"
+        android:textColor="@color/gray" />
+
+
+
+</RelativeLayout>

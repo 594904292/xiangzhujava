@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ 	android:background="@color/activity_bg_color"
+     android:orientation="horizontal" >
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/top_menu_second" />
+
+
+    <RelativeLayout
+        android:id="@+id/body1"
+        android:layout_below="@+id/title_bar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f5f5f5"
+                    android:padding="1dp" >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="1dp" >
+            <RelativeLayout
+                android:id="@+id/top_row"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/headface"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/xz_xiang_icon"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+                <RelativeLayout
+                    android:id="@+id/one"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/headface"
+                    android:layout_marginLeft="5dp">
+                    <TextView
+                        android:id="@+id/info_sendname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textIsSelectable="true"
+                        android:text="Admin"
+                        android:textSize="18dp"/>
+                    <ImageView
+                        android:id="@+id/sex_img"
+                        android:layout_toRightOf="@id/info_sendname"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/xz_nv_icon"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/two"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/headface"
+                    android:layout_below="@+id/one"
+                    android:layout_marginLeft="5dp"
+                    >
+
+
+                        <TextView
+                            android:id="@+id/info_sendtime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textIsSelectable="true"
+                            android:text="时间"
+                            style="@style/TextViewItem_gray"
+                            />
+                        <TextView
+                            android:id="@+id/info_sendaddress"
+                            android:layout_below="@+id/info_sendtime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="地点:"
+                            android:textIsSelectable="true"
+                            android:textColor="#343434"
+
+
+                            style="@style/TextViewItem_gray" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/fg_row"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top_row"
+                android:background="@drawable/spacer_medium"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/main_row"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fg_row">
+                <TextView
+                    android:id="@+id/info_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/thumbnail"
+                    android:layout_marginTop="5dp"
+                    android:text="正文"
+                    android:textIsSelectable="true"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#343434"
+                    android:textColorLink="@color/gray"
+                    android:textSize="18sp"
+                    style="@style/TextViewItem_body" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/endrow"
+
+                android:layout_below="@id/main_row"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="0dp"
+                android:gravity="bottom">
+                <TextView
+                    android:id="@+id/t1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="评论"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#343434"
+                    android:textColorLink="@color/gray"
+                    android:textSize="18sp"
+                    style="@style/TextViewItem_body" />
+
+                <EditText
+                    android:id="@+id/view_group_discuss"
+                    android:layout_below="@+id/t1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/bg_edittext"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="请输入你要对帮助的要说些什么"
+                    android:lines="5"
+                    android:textColor="@color/edit_common_text" >
+                </EditText>
+
+                <TextView
+                    android:text="0/200"
+                    android:textColor="@color/gray_light"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom|right"
+                    android:id="@+id/chCounterText"
+                    android:paddingRight="5dp"
+                    android:layout_alignTop="@+id/view_group_discuss"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/endrow2"
+
+                android:layout_below="@id/endrow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingRight="0dp"
+                android:layout_marginBottom="10dp">
+                <Button
+                    android:id="@+id/save_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_red_bg"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="80dp"
+                    android:paddingRight="80dp"
+                    android:paddingTop="10dp"
+                    android:text="提交"
+                    android:textColor="@color/btn_common_text"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

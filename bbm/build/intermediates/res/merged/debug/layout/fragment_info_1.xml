@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <!--RelativeLayout
+        android:id="@+id/toprow"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white">
+        <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:id="@+id/topspace"
+            android:layout_weight="1"
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:layout_below="@+id/topspace"
+            android:text="系统公告"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/name"
+            android:layout_weight="1"
+            android:layout_alignParentLeft="true"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_below="@+id/topspace"
+            android:text="2016-10-12"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/time"
+            android:layout_weight="1"
+            android:textColor="@color/bg_gray"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="16sp" />
+        <TextView
+            android:text="系统使用说明系统使用说明系统使用说明系统使用说明系统使用说明系统使用说明系统使用说明系统使用说明系统使用说明系统使用说明系统使用说明系统使用说明....."
+            android:layout_below="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/desc"
+            android:layout_weight="1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/bg_gray"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout-->
+
+    <com.bbxiaoqu.comm.widget.NewAutoListView
+            android:id="@+id/infolstv_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:layout_alignParentLeft="true"
+            />
+</LinearLayout>

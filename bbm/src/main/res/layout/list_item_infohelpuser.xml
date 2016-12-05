@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="#f5f5f5"
+				android:padding="1dp" >
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="#FFFFFF"
+		android:padding="1dp" >
+		<RelativeLayout
+			android:id="@+id/top_row"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+
+			<com.bbxiaoqu.comm.widget.XCRoundImageView
+				android:id="@+id/imageView"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:src="@mipmap/xz_xiang_icon"
+				android:layout_marginLeft="15dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp"/>
+
+			<RelativeLayout
+				android:id="@+id/one"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_toRightOf="@id/imageView"
+				android:layout_marginTop="5dp"
+				android:layout_marginLeft="5dp">
+				<TextView
+					android:id="@+id/username"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Admin"
+					style="@style/item_title_style"
+					android:textSize="18dp"/>
+				<ImageView
+					android:id="@+id/sex_img"
+					android:layout_toRightOf="@id/username"
+					android:layout_marginLeft="10dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@mipmap/xz_nv_icon"/>
+				<TextView
+					android:id="@+id/type"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="12sp"
+					android:layout_alignParentRight="true"
+					android:background="@drawable/helptype_border_button"
+					android:text="类别"
+					android:visibility="gone"
+					android:paddingLeft="10dp"
+					android:paddingRight="10dp"
+					android:paddingTop="2dp"
+					android:paddingBottom="2dp"/>
+			</RelativeLayout>
+			<RelativeLayout
+				android:id="@+id/two"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_toRightOf="@id/imageView"
+				android:layout_below="@+id/one"
+				android:layout_marginLeft="5dp"
+				android:layout_marginTop="8dp">
+				<TextView
+					android:id="@+id/infohelpusercontent"
+					android:layout_marginLeft="5dp"
+					android:layout_marginRight="75dp"
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:text=""
+					android:background="@drawable/helpinfouser_info_bg"
+
+					android:textSize="16sp"
+					android:layout_marginBottom="5dp"
+					android:paddingLeft="10dp"
+					android:paddingRight="10dp"/>
+
+				<Button
+					android:id="@+id/button2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentEnd="true"
+					android:background="@mipmap/xz_niu_icon"
+					android:textColor="#B7504C"
+					android:clickable="true"
+					android:focusable="false"
+					android:textSize="18sp"
+					android:text="采纳"
+					android:layout_marginRight="5dp"
+					android:paddingTop="23dp"/>
+			</RelativeLayout>
+		</RelativeLayout>
+
+
+	</RelativeLayout>
+</RelativeLayout>

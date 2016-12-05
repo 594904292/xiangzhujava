@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    
+
+
+
+<RelativeLayout 
+    android:id="@+id/headbar"
+    android:orientation="vertical"   
+    android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	style="@style/xz_top_menu_style"
+	android:paddingLeft="@dimen/xz_top_margin_size"
+	android:paddingRight="@dimen/xz_top_margin_size">
+
+	<ImageView
+		android:id="@+id/top_menu_left_image"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:src="@mipmap/btn_back_normal"
+		android:layout_marginTop="6dp"
+		android:padding="2.0dip"
+		android:scaleType="fitXY"
+		android:onClick="doBack"/>
+		<RelativeLayout
+			android:id="@+id/top"
+			android:layout_toRightOf="@+id/top_menu_left_image"
+			android:layout_width="fill_parent"
+			android:layout_height="44dp"
+			android:layout_alignParentTop="false"
+			android:paddingRight="10dp" >
+
+			<TextView android:id="@+id/btnSearch"
+					  android:layout_width="wrap_content"
+					  android:layout_height="wrap_content"
+					  android:gravity="center"
+					  android:layout_centerVertical="true"
+					  android:layout_alignParentRight="true"
+					  android:textSize="14sp"
+					  android:textStyle="bold"
+					  android:text="搜索"
+					  android:textColor="@color/white"/>
+
+			<RelativeLayout android:id="@+id/rlSearchFrameDelete"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:layout_centerVertical="true"
+							android:gravity="center_vertical"
+							android:layout_toLeftOf="@id/btnSearch"
+							android:layout_marginLeft="10dp"
+							android:layout_marginRight="10dp">
+				<EditText android:id="@+id/etSearch"
+						  android:background="@drawable/searchedit_shape"
+						  android:layout_width="fill_parent"
+						  android:layout_height="30dp"
+						  android:singleLine="true"
+						  android:layout_marginRight="10dp"
+						  android:paddingLeft="12dp"
+						  android:textSize="12sp"
+						  android:drawableLeft="@mipmap/xz_seach_icon"
+						  android:hint="开锁公司"/>
+
+				<ImageView android:id="@+id/ivDeleteText"
+						   android:layout_width="wrap_content"
+						   android:layout_height="wrap_content"
+						   android:layout_alignParentRight="true"
+						   android:layout_centerInParent="true"
+						   android:paddingRight="20dp"
+						   android:src="@mipmap/xz_cha_icon"
+						   android:visibility="gone"/>
+			</RelativeLayout>
+		</RelativeLayout>
+
+		</RelativeLayout>
+
+     <com.bbxiaoqu.comm.view.XCFlowLayout
+        android:id="@+id/flowlayout"
+		android:layout_marginTop="10dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp"
+		android1:layout_below="@+id/headbar"
+        android:layout_width="match_parent"  
+        android:layout_height="200dp" >
+    </com.bbxiaoqu.comm.view.XCFlowLayout>
+
+	<RelativeLayout
+		android1:id="@+id/resultview"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android1:layout_below="@+id/flowlayout"
+		android:layout_alignParentLeft="true"
+		android:visibility="gone"
+		>
+	<LinearLayout
+		android:id="@+id/nomess"
+		android:layout_width="match_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:gravity="center"
+		android:visibility="gone"
+		>
+
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/imageView2"
+			android:layout_gravity="center_horizontal"
+			android:background="@mipmap/message" />
+
+		<Button
+			android:id="@+id/viewhistorybtn"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:textColor="@color/gray"
+			android:text="没有匹配到记录"
+			android:layout_gravity="center_horizontal"
+			android:background="@mipmap/suibiankankan"
+			android:paddingTop="10dp"
+			android:paddingBottom="10dp" />
+	</LinearLayout>
+     <ListView
+         android:id="@+id/search_lstv"
+		 android:layout_marginTop="10dp"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+          />
+   
+</RelativeLayout>
+	</RelativeLayout>

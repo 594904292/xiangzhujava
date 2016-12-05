@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="882bdd93cb089ef6c43d2a32811940f76bc79544">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_9cc5e52645bff0daa41392b93e591b00fe450215\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\android-studio-ide-145.3225885-windows\android-studio\gradle\m2repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.2.4_2517dee3309087af22b6f093f204824e67a926af\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.2.0_c8099708e8aac89da8b0ab5e749a795833b03443\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\exploded-aar\com.tencent.bugly\crashreport\2.3.6\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="c8eebe2b083a65d16f332110a0d59159513033fb">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\10\com.tencent.bugly-crashreport-2.3.6_a920d5755eeff54adc1c9e6e6503dc1364b8309e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\src\main\jniLibs\pushservice-4.6.2.39.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="c3dbe0fdd31a38b3defc63f78f8fccabd50e2ddd">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\pushservice-4.6.2.39_8f9ef867486a9a5616a21ac869101efe206e25fe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\smack-tcp-4.1.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="377c3cb4262943262a1e8fd45542a371fc40b81f">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\smack-tcp-4.1.7_448dd8c85feb79d6d31fac5bdd2c0895b16bbf3d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\src\main\jniLibs\VoiceRecognition.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="99844d9e4943e9f0d59e94423ec9c2cef5d36db8">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\VoiceRecognition_a59629c7b10953d6563b7441f2551bb64cad270d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="82eaf3ffabf396c7a500ad20f36828d7c1f7d159">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_eac59b07f4032b846c4d2e6201b9c41c520640a9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\universal-image-loader-1.9.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.5_87d605be8a263461bf8560f656674e022f0bf7b9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\src\main\jniLibs\baidumapapi_map_v3_7_0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="534f8d224f352bba70229230b79028cab1e7859c">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\baidumapapi_map_v3_7_0_44381034e813efed24b43b66c00e19e8e04b5cd0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\smack-compression-jzlib-4.1.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="c2a9bdd6219259fb0482849f13b2d7b6359bba4c">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\smack-compression-jzlib-4.1.7_637a3d0cca78eda6ab6e02e34608d5bd68a7a9a8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\src\main\jniLibs\locSDK_6.13.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="2cdb37444b41b42e1ce5a8a27e5d3c22e1c57479">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\locSDK_6.13_e8e464573f71d279454d3e909926d76cee766478\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\libammsdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="c1f63f70671d69ee38379728e1192db82e289246">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\libammsdk_44ee626a0d74d9902f7bbbfdd5d35dd25232e482\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\src\main\jniLibs\baidumapapi_search_v3_7_0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="934d5f6ca26f082fbe8bf17767caa530e37d1dfa">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\baidumapapi_search_v3_7_0_bd7888297ebdace244140fc60f840469f724be9b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\commons-logging-1.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="4bfc12adfe4842bf07b657f0369c4cb522955686">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\commons-logging-1.2_e8251fd5ab73a8dc3a9da7deded96b8b6e6ede7c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\jxmpp-core-0.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="5f1a593b122d43161a8fb059f40f2ab9cb8f9925">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\jxmpp-core-0.4.0_ac9665c24d8886baa57d7ef2fea7dd208f88c993\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\src\main\jniLibs\baidumapapi_util_v3_7_0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="72003ec5efa50c2e02266e1ad7ebefaca7d017d6">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\baidumapapi_util_v3_7_0_13b3e01c34c30597a03f62382a860628e7249ae0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\smack-core-4.1.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="dc8ba1d10edc90265942945bfb2ae19c21206712">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\smack-core-4.1.7_edf077d1ff73bbf8f27ec410ac91a3c645431474\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\android-async-http-1.4.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="3bae85a076241828810bf8fbcc12e5891d5fc34c">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\android-async-http-1.4.4_6ffc5513e82767e653cbdfc635ad064136c4780d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\smack-android-4.1.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="92085c5e74ab55369d670203bfde8f4ef692e7d5">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\smack-android-4.1.7_7fc1db469be02db8b8f8ef61f4a91bc74bd2d03d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\android-sdks\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-22.2.0_01bdac2d04a7ca200817ae753d6797afb09ad041\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-22.2.0_82f946a8991cf2c6974d6d17cb9158fdfd51161d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\smack-im-4.1.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="b331038f5f043be09edf80266a2139e6158b67a2">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\smack-im-4.1.7_c44070a5e885e12e00367f244f7b3cb79086cc37\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\jxmpp-util-cache-0.4.0-alpha1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="86b62774d1145e71e664eed38935bcf7fd3d38a9">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\jxmpp-util-cache-0.4.0-alpha1_98e83b510d7a25d2aa029749f2cd14c62bd84760\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\httpclient-4.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="733db77aa8d9b2d68015189df76ab06304406e50">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\httpclient-4.5.2_fa51e3534a5f7d85844b3c53d65501f12af7e207\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-8.1.0_0fcb2f9a5daec3a0d909e726c204ae78ef480aec\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\smack-extensions-4.1.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="43c3044c242984118cf7cf7a0a1725b1ecda018c">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\smack-extensions-4.1.7_5038c28e2d1ac8411016fa25238e485742f8bed3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\smack-sasl-provided-4.1.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="e7760cc49faa972d636b22b356c6b5f112e41220">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\smack-sasl-provided-4.1.7_856527ddecdca64803053937668cc97d5c1ac196\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\libs\crittercism_v3_0_3_sdkonly.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="17fd8b2c455671bb79b043fe79fa82846881809f">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\crittercism_v3_0_3_sdkonly_c440e8314ed5b0fddb5419ead42ae61aa972f20c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\src\main\jniLibs\baidumapapi_base_v3_7_0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="18e10945278df7f556e2e336a826b0db965dce51">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\2\baidumapapi_base_v3_7_0_d0437ce055fd1f26362ff4cb7c099f6769af89e9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-8.1.0_6e71a287b5f462b2f5bce0ca7fb587e12a5f4e34\classes.dex" />
+    </item>
+
+</items>
