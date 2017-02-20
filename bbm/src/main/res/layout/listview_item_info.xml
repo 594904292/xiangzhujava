@@ -41,6 +41,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="18dp"
                     android:src="@mipmap/xz_nv_icon"/>
+
+
+
+                <TextView
+                    android:id="@+id/score"
+                    android:drawableLeft="@mipmap/jifen"
+                    android:layout_toRightOf="@id/sex_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/xz_list_item_sub"
+                    android:text="0"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="2dp"
+                    />
+
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/two"
@@ -158,10 +175,14 @@
                 android:textSize="14sp"/>
         </RelativeLayout>
         </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="1dp" >
+        android:padding="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
         <ImageView
             android:id="@+id/statusimg"
             android:layout_alignParentRight="true"

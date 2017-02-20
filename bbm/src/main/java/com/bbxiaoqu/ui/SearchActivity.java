@@ -298,7 +298,7 @@ public class SearchActivity extends Activity implements NewListViewAdapter.Callb
 		//String keyword=etSearch.getText().toString();
 		//myapplication.getLat(),myapplication.getLng()
 				//+"&latitude="+latitude+"&longitude="+longitude+"
-		url="http://api.bbxiaoqu.com/getinfos.php?userid="+myapplication.getUserId()+"&latitude="+myapplication.getLat()+"&longitude="+myapplication.getLng()+"&rang=xiaoqu&keyword="+keyword+"&start="+start+"&limit="+limit;
+		url="https://api.bbxiaoqu.com/getinfos.php?userid="+myapplication.getUserId()+"&latitude="+myapplication.getLat()+"&longitude="+myapplication.getLng()+"&rang=xiaoqu&keyword="+keyword+"&start="+start+"&limit="+limit;
 
 		HttpGet httprequest = new HttpGet(url);
 		HttpClient HttpClient1 = new DefaultHttpClient();

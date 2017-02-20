@@ -8,7 +8,6 @@
     <include
         android:id="@+id/title_bar"
         layout="@layout/title_bar" />
-
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -113,7 +112,39 @@
                         android:textColor="@color/black" />
                 </RadioGroup>
             </LinearLayout>
-
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10.0dip" >
+                <EditText
+                    android:id="@+id/xiaoqu_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edittext"
+                    android:ems="10"
+                    android:hint="小区名称"
+                    android:layout_marginTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="5dp"
+                    android:layout_weight="6"
+                    android:textColor="@color/edit_common_text" />
+                <Button
+                    android:id="@+id/selxiaoqu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingTop="8dp"
+                    android:text="选择小区"
+                    android:textColor="@color/btn_common_text"
+                    android:textSize="18sp" />
+            </LinearLayout>
             <Button
                 android:id="@+id/save"
                 android:layout_width="wrap_content"

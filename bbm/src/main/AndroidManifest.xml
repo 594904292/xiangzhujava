@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bbxiaoqu"
     android:installLocation = "auto"
-    android:versionCode="39"
-    android:versionName="1.20161116" >
+    android:versionCode="44"
+    android:versionName="1.20170220" >
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="22" />
@@ -30,6 +30,12 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
+    <!-- 适配Android N系统必需的ContentProvider写权限声明，写权限包含应用包名-->
+    <uses-permission android:name="baidu.push.permission.WRITE_PUSHINFOPROVIDER.com.bbxiaoqu" />
+    <permission
+        android:name="baidu.push.permission.WRITE_PUSHINFOPROVIDER.com.bbxiaoqu"
+        android:protectionLevel="normal">
+    </permission>
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -54,7 +60,13 @@
                  <action android:name="android.intent.action.MAIN" />
                  <category android:name="android.intent.category.LAUNCHER" />
              </intent-filter>
-        </activity>
+             <intent-filter>
+                 <action android:name="android.intent.action.VIEW"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+                 <category android:name="android.intent.category.BROWSABLE"/>
+                 <data android:scheme="xiangzhu"/>
+             </intent-filter>
+         </activity>
         <activity
             android:name=".ui.guide.Guide"
             android:label="@string/app_name" >
@@ -74,6 +86,24 @@
             android:name=".ui.ListInfoActivity"
             android:label="@string/app_name" >
         </activity>
+
+        <activity
+            android:name=".ui.ListConvenienceActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".ui.ListConvenienceMyActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".ui.SelectAddressActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".ui.LocationSearchActivity"
+            android:label="@string/app_name" >
+        </activity>
+
          <activity
             android:name=".ui.LoginActivity"
             android:windowSoftInputMode="adjustPan"
@@ -113,7 +143,14 @@
 
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".ui.PublishShopInfoActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
 
+            android:label="@string/app_name" >
+        </activity>
         <activity
             android:name=".ui.SearchActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -306,10 +343,7 @@
         </receiver-->
 
 
-        <!-- 4.6版本新增的Activity声明，提升Push后台存活率 -->
-        <activity
-            android:name="com.baidu.android.pushservice.PushKeepAlive"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
 
      <!-- push应用定义消息receiver声明 -->
         <receiver android:name="com.bbxiaoqu.client.baidu.BbPushMessageReceiver">
@@ -322,7 +356,7 @@
                 <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
             </intent-filter>
         </receiver>
-        
+
         <!-- push必须的receviver和service声明 -->
 
         <receiver android:name="com.baidu.android.pushservice.PushServiceReceiver"
@@ -348,7 +382,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_REMOVED"/>
                 <data android:scheme="package" />
-            </intent-filter>                   
+            </intent-filter>
         </receiver>
         <service
             android:name="com.baidu.android.pushservice.PushService"
@@ -361,8 +395,17 @@
         <!-- 4.4版本新增的CommandService声明，提升小米和魅族手机上的实际推送到达率 -->
 	    <service android:name="com.baidu.android.pushservice.CommandService"
             android:exported="true" />
+
+        <!-- 适配Android N系统必需的ContentProvider声明，写权限包含应用包名-->
+        <provider
+            android:name="com.baidu.android.pushservice.PushInfoProvider"
+            android:authorities="com.baidu.push.example.bdpush"
+            android:writePermission="baidu.push.permission.WRITE_PUSHINFOPROVIDER.com.bbxiaoqu"
+            android:protectionLevel = "signature"
+            android:exported="true" />
+
         <!-- push结束 -->
-        
+
 		<!-- 在百度开发者中心查询应用的API Key -->
         <meta-data android:name="api_key" android:value="a9iBkVoUQAH78XCTnLdL6PoY" />
          <service

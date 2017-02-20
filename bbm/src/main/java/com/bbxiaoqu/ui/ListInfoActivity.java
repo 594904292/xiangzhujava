@@ -19,12 +19,21 @@ import android.widget.TextView;
 import com.baidu.location.LocationClient;
 import com.bbxiaoqu.DemoApplication;
 import com.bbxiaoqu.R;
+import com.bbxiaoqu.api.ApiAsyncTask;
+import com.bbxiaoqu.api.MarketAPI;
+import com.bbxiaoqu.client.baidu.Utils;
 import com.bbxiaoqu.ui.fragment.FragmentInfo1;
 import com.bbxiaoqu.ui.fragment.FragmentInfo2;
 import com.bbxiaoqu.ui.fragment.FragmentInfo3;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-public class ListInfoActivity extends FragmentActivity implements TabHost.OnTabChangeListener {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+
+public class ListInfoActivity extends FragmentActivity implements TabHost.OnTabChangeListener, ApiAsyncTask.ApiRequestListener {
 	private DemoApplication myapplication;
 	private LocationClient mLocationClient;
 
@@ -61,6 +70,9 @@ public class ListInfoActivity extends FragmentActivity implements TabHost.OnTabC
 
 
 		initTabHost();
+
+
+		MarketAPI.DAILYLOGIN(myapplication, this,myapplication.getUserId());
 
 	}
 	private void initView()
@@ -137,6 +149,32 @@ public class ListInfoActivity extends FragmentActivity implements TabHost.OnTabC
 
 			}
 
+		}
+	}
+	@Override
+	public void onSuccess(int method, Object obj) {
+		// TODO Auto-generated method stub
+		switch (method) {
+			case MarketAPI.ACTION_DAILYLOGIN:
+				HashMap<String, String> result3 = (HashMap<String, String>) obj;
+				String JsonContext3=result3.get("result");
+				System.out.println(JsonContext3);
+				break;
+
+			default:
+				break;
+		}
+	}
+
+
+	@Override
+	public void onError(int method, int statusCode) {
+		// TODO Auto-generated method stub
+		switch (method) {
+			case MarketAPI.ACTION_DAILYLOGIN:
+				break;
+			default:
+				break;
 		}
 	}
 

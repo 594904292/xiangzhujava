@@ -76,7 +76,7 @@ public class RecentAdapter extends BaseAdapter {
 
 	
 	   	
-		String fileName =  "http://api.bbxiaoqu.com/uploads/" + list.get(position).get("usericon").toString();
+		String fileName =  "https://api.bbxiaoqu.com/uploads/" + list.get(position).get("usericon").toString();
 
 
 

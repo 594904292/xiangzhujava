@@ -73,31 +73,31 @@ public class XmppTool {
 	}
 
 	public static void login() {
-				XMPPTCPConnection connection = XmppTool.getInstance(mContext).getConnection();
-				try {
-					connection.connect();
-				} catch (SmackException e) {
-					//e.printStackTrace();
-				} catch (IOException e) {
-					//e.printStackTrace();
-				} catch (XMPPException e) {
-					//e.printStackTrace();
-				}
-				UserService uService = new UserService(mContext);
-				Session mSession = Session.get(mContext);
-				try {
-					connection.login(mSession.getUid(), mSession.getPassword(), "XMPPTCPConnection");
-				} catch (XMPPException e) {
-					//e.printStackTrace();
-				} catch (SmackException e) {
-					//e.printStackTrace();
-				} catch (IOException e) {
-					//e.printStackTrace();
-				}
-		boolean v=connection.isConnected();
-		boolean vv=connection.isAuthenticated();
-
-		if (connection.isConnected() && connection.isAuthenticated()) {
+		Session mSession = Session.get(mContext);
+		if(mSession.getUid().length()>0&&mSession.getPassword().length()>0) {
+			XMPPTCPConnection connection = XmppTool.getInstance(mContext).getConnection();
+			try {
+				connection.connect();
+			} catch (SmackException e) {
+				//e.printStackTrace();
+			} catch (IOException e) {
+				//e.printStackTrace();
+			} catch (XMPPException e) {
+				//e.printStackTrace();
+			}
+			UserService uService = new UserService(mContext);
+			try {
+				connection.login(mSession.getUid(), mSession.getPassword(), "XMPPTCPConnection");
+			} catch (XMPPException e) {
+				//e.printStackTrace();
+			} catch (SmackException e) {
+				//e.printStackTrace();
+			} catch (IOException e) {
+				//e.printStackTrace();
+			}
+			boolean v = connection.isConnected();
+			boolean vv = connection.isAuthenticated();
+			if (connection.isConnected() && connection.isAuthenticated()) {
 				Presence presence = new Presence(Presence.Type.available);
 				try {
 					connection.sendStanza(presence);
@@ -105,6 +105,7 @@ public class XmppTool {
 					e.printStackTrace();
 				}
 			}
+		}
 	}
 
 }

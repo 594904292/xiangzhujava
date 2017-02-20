@@ -82,7 +82,9 @@ public class AboutActivity extends BaseActivity {
 		textView = (TextView) findViewById(R.id.about_textView1);	
 		textView.setText("襄助（"+getVersionName()+")是基于位置的是传播正能量的互联网互助平台。让附近的人互相帮忙，我们希望把大众的力量组织起来，有一技之长的人可以通过“襄助”为附近的人提供帮助；普通大众可以通过“襄助” 快速寻求帮助。 “涓滴之水成海洋，颗颗爱心变希望”。");
 	}
-	
+
+
+
 	public String getSDPath(){  
         File sdDir = null;  
         boolean sdCardExist = Environment.getExternalStorageState()    

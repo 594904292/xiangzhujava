@@ -2,6 +2,7 @@ package com.bbxiaoqu.comm.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bbxiaoqu.DemoApplication;
 import com.bbxiaoqu.ImageOptions;
 import com.bbxiaoqu.R;
 import com.bbxiaoqu.comm.widget.XCRoundImageView;
@@ -88,7 +90,7 @@ public class ReportsAdapter extends BaseAdapter {
 			holder_img.nickname.setText (list.get (position).get ("nickname").toString ());
 		}
 		if(list.get(position).get("headface")!=null&&list.get(position).get("headface").toString ().length ()>0) {
-			String headfaceurl = "http://api.bbxiaoqu.com/uploads/" + list.get (position).get ("headface").toString ();
+			String headfaceurl = "https://api.bbxiaoqu.com/uploads/" + list.get (position).get ("headface").toString ();
 			ImageLoader.getInstance ().displayImage (headfaceurl, holder_img.userhead, ImageOptions.getOptions ());
 		}else
 		{
@@ -114,6 +116,7 @@ public class ReportsAdapter extends BaseAdapter {
         //holder_img.ratingbar.setLayoutParams(lp);
 		holder_img.ratingbar.setRating(Float.parseFloat(list.get(position).get("score").toString()));
 		holder_img.nums.setText(list.get(position).get("nums").toString());
+
 		holder_img.order.setText("第"+list.get(position).get("order").toString()+"名");
 
 		return convertView;

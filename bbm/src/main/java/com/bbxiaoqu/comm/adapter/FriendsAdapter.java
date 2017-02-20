@@ -70,7 +70,7 @@ public class FriendsAdapter extends BaseAdapter {
 			holder_img = (ViewHolderimg) convertView.getTag();
 		}
 		
-		String fileName =  "http://api.bbxiaoqu.com/uploads/" + list.get(position).get("headface").toString();
+		String fileName =  "https://api.bbxiaoqu.com/uploads/" + list.get(position).get("headface").toString();
 		ImageLoader.getInstance().displayImage(fileName,holder_img.userhead,
 				ImageOptions.getOptions());
 		holder_img.username.setText(list.get(position).get("username").toString());

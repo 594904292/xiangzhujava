@@ -136,6 +136,7 @@ public class MainTabActivity extends FragmentActivity implements TabHost.OnTabCh
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//this.setTheme(R.style.AppTheme);
 		setContentView(R.layout.main_tab_layout);
 		if (Build.VERSION.SDK_INT > 9) {
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -148,10 +149,18 @@ public class MainTabActivity extends FragmentActivity implements TabHost.OnTabCh
 		myapplication.getInstance().addActivity(this);
 		final Context context = getApplicationContext();
 		mSession = Session.get(context);
+		if(mSession.getUid().equals(""))
+		{
+			Intent Intent1 = new Intent();
+			Intent1.setClass(MainTabActivity.this, LoginActivity.class);
+			startActivity(Intent1);
+			return;
+		}
 		Resources resource = this.getResources();
 		String pkgName = this.getPackageName();
 		initbaidu(resource, pkgName);
 		initlsb();
+
 		PushManager.startWork(getApplicationContext(),
 				PushConstants.LOGIN_TYPE_API_KEY,
 				Utils.getMetaValue(MainTabActivity.this, "api_key"));
@@ -277,6 +286,8 @@ public class MainTabActivity extends FragmentActivity implements TabHost.OnTabCh
 			public void onClick(View v) {
 				Intent intent = new Intent(myapplication, NoticeActivity.class);
 				startActivity(intent);
+				/*Intent intent = new Intent(MainTabActivity.this, UserInfoActivity.class);
+				startActivity(intent);*/
 			}
 		});
 		right_image.setOnClickListener(new View.OnClickListener() {
@@ -422,8 +433,11 @@ public class MainTabActivity extends FragmentActivity implements TabHost.OnTabCh
 				myapplication.setLng(String.valueOf(nLontitude));
 				myapplication.updatelocation();
 				mLocationClient.stop();
-				new Thread(loaduservisiblerange).start();
-				new Thread(loaduserxiaoqu).start();
+				/*new Thread(loaduservisiblerange).start();
+				new Thread(loaduserxiaoqu).start();*/
+				loaduserdata();
+
+
 
 			}
 		});
@@ -431,118 +445,13 @@ public class MainTabActivity extends FragmentActivity implements TabHost.OnTabCh
 		mLocationClient.requestLocation();
 	}
 
+	public void loaduserdata()
+	{
+		MarketAPI.GetUserVisibleRang(getApplicationContext(),this,Country,Province,City,District,Street);
+		MarketAPI.GetUserVisibleCommunity(getApplicationContext(),this,myapplication.getUserId());
 
-	Runnable loaduservisiblerange = new Runnable() {
-		@Override
-		public void run() {
-			// TODO Auto-generated method stub
-			String rang = "0";
-			String p1= null;
-			String p2= null;
-			String p3= null;
-			String p4= null;
-			String p5= null;
-			try {
-				p1 = URLEncoder.encode(Country,"utf-8");
-				p2=URLEncoder.encode(Province,"utf-8");
-				p3=URLEncoder.encode(City,"utf-8");
-				p4=URLEncoder.encode(District,"utf-8");
-				p5=URLEncoder.encode(Street,"utf-8");
-			} catch (UnsupportedEncodingException e) {
-				e.printStackTrace();
-			}
-			String target = myapplication.getlocalhost()+"getuservisiblerange.php?country="+ p1 +"&province="+p2+"&city="+p3+"&district="+p4+"&street="+p5;
-			HttpGet httprequest = new HttpGet(target);
-			try {
-				HttpClient HttpClient1 = CustomerHttpClient.getHttpClient();
-				HttpResponse httpResponse = HttpClient1.execute(httprequest);
-				if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-					InputStream jsonStream = null;
-					jsonStream = httpResponse.getEntity().getContent();
-					byte[] data = null;
-					try {
-						data = StreamTool.read(jsonStream);
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					String json = new String(data);
-					JSONObject jsonobject;
-					try {
-						jsonobject = new JSONObject(json);
-						rang = jsonobject.getString("rang");
-						mSession.settRang(rang);
-					} catch (JSONException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					System.out.println(json);
+	}
 
-				} else {
-
-				}
-			} catch (ClientProtocolException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-		}
-	};
-
-
-	Runnable loaduserxiaoqu = new Runnable() {
-		@Override
-		public void run() {
-			// TODO Auto-generated method stub
-			String community= null;
-			String community_id= null;
-			String community_lat= null;
-			String community_lng= null;
-			String target = myapplication.getlocalhost()+"getuservisiblecommunity.php?userid=" + myapplication.getUserId();
-			HttpGet httprequest = new HttpGet(target);
-			try {
-				HttpClient HttpClient1 = CustomerHttpClient.getHttpClient();
-				HttpResponse httpResponse = HttpClient1.execute(httprequest);
-				if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-					InputStream jsonStream = null;
-					jsonStream = httpResponse.getEntity().getContent();
-					byte[] data = null;
-					try {
-						data = StreamTool.read(jsonStream);
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					String json = new String(data);
-					JSONObject jsonobject;
-					try {
-						jsonobject = new JSONObject(json);
-						community = jsonobject.getString("community");
-						community_id = jsonobject.getString("community_id");
-						community_lat = jsonobject.getString("community_lat");
-						community_lng = jsonobject.getString("community_lng");
-						mSession.setXiaoquname(community);
-						mSession.setXiaoquid(community_id);
-
-						//mSession.settRang(Integer.parseInt(rang));
-					} catch (JSONException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					System.out.println(json);
-
-				} else {
-
-				}
-			} catch (ClientProtocolException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-		}
-	};
 
 	Runnable updataRun = new Runnable() {
 		@Override
@@ -790,6 +699,33 @@ public class MainTabActivity extends FragmentActivity implements TabHost.OnTabCh
 						Utils.makeEventToast(MainTabActivity.this, "gonggao xml解释错误",false);
 					}
 				}
+				break;
+			case MarketAPI.ACTION_GETUSERVISIBLERANGE:
+				HashMap<String, String> result2 = (HashMap<String, String>) obj;
+				String JsonContext2=result2.get("result");
+				try {
+					JSONObject jsonobject2 = new JSONObject(JsonContext2);
+					String rang = jsonobject2.getString("rang");
+					mSession.settRang(rang);
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+				break;
+			case MarketAPI.ACTION_GETUSERVISIBLECOMMUNITY:
+				HashMap<String, String> result3 = (HashMap<String, String>) obj;
+				String JsonContext3=result3.get("result");
+				try {
+					JSONObject jsonobject3 = new JSONObject(JsonContext3);
+					String community = jsonobject3.getString("community");
+					String community_id = jsonobject3.getString("community_id");
+					String community_lat = jsonobject3.getString("community_lat");
+					String community_lng = jsonobject3.getString("community_lng");
+					mSession.setXiaoquname(community);
+					mSession.setXiaoquid(community_id);
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+
 				break;
 			default:
 				break;

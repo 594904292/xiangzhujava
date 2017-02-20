@@ -48,6 +48,8 @@ import com.bbxiaoqu.comm.tool.StreamTool;
 import com.bbxiaoqu.comm.tool.T;
 import com.bbxiaoqu.comm.widget.XCRoundImageView;
 import com.bbxiaoqu.ui.InfoPlActivity;
+import com.bbxiaoqu.ui.ListConvenienceActivity;
+import com.bbxiaoqu.ui.ListConvenienceMyActivity;
 import com.bbxiaoqu.ui.LoadingView;
 import com.bbxiaoqu.ui.LoginActivity;
 import com.bbxiaoqu.ui.ListInfoActivity;
@@ -105,7 +107,6 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 	private AsyncHttpClient client;
 
 	TextView title;
-	TextView txt_userid;
 	TextView brithday_tv;
 	TextView sex_tv;
 	TextView telphone_tv;
@@ -115,7 +116,7 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 	private TextView username;
 	private TextView my_nickname;
 	private TextView my_userid;
-
+	private TextView  my_score;
 	private String headfacepath = "";
 	private String headfacename = "";
 
@@ -215,9 +216,9 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 	}
 	private void initView() {
 		title = (TextView) view.findViewById(R.id.title);
-		txt_userid = (TextView) view.findViewById(R.id.txt_userid);
 		my_nickname = (TextView) view.findViewById(R.id.my_nickname);
 		my_userid = (TextView) view.findViewById(R.id.my_userid);
+		my_score = (TextView) view.findViewById(R.id.score);
 		username = (TextView) view.findViewById(R.id.username);
 		brithday_tv= (TextView) view.findViewById(R.id.brithday_tv);
 		sex_tv= (TextView)view.findViewById(R.id.sex_tv);
@@ -227,6 +228,7 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 		emergencycontact_tv=  (TextView) view.findViewById(R.id.emergencycontact_tv);
 		headface= (RoundAngleImageView)view.findViewById(R.id.headface);
 		iv_photo = (ImageView)view.findViewById(R.id.iv_photo);
+
 		RelativeLayout tag1_view=(RelativeLayout) view.findViewById(R.id.tag1_view);
 		tag1_view.setOnClickListener(new View.OnClickListener () {
 			public void onClick(View v) {
@@ -240,6 +242,7 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 				myactivity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 			}
 		});
+
 		RelativeLayout tag3_view=(RelativeLayout) view.findViewById(R.id.tag3_view);
 		tag3_view.setOnClickListener(new View.OnClickListener () {
 			public void onClick(View v) {
@@ -247,6 +250,7 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 				myactivity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 			 }
 		});
+
 		RelativeLayout tag5_view=(RelativeLayout) view.findViewById(R.id.tag5_view);
 		tag5_view.setOnClickListener(new View.OnClickListener () {
 			public void onClick(View v) {
@@ -274,6 +278,7 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 		LinearLayout update_recmess=(LinearLayout)view.findViewById (R.id.update_recmess);
 		LinearLayout update_setting=(LinearLayout)view.findViewById (R.id.update_setting);
 		LinearLayout update_share=(LinearLayout)view.findViewById (R.id.update_share);
+		LinearLayout update_shop=(LinearLayout)view.findViewById (R.id.update_shop);
 		LinearLayout exit=(LinearLayout)view.findViewById (R.id.exit);
 		update_headface.setOnClickListener(new View.OnClickListener () {
 			public void onClick(View v) {
@@ -327,10 +332,9 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 				dialogTitleLineColor(nicknamedlg,R.color.gray_light);
 			}
 		});
+
 		update_brithday.setOnClickListener(new View.OnClickListener () {
 			public void onClick(View v) {
-
-
 				String str="1979-01-01";
 				if(brithday_tv.getText().length()>8)
 				{
@@ -349,7 +353,6 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 				int  year=mycalendar.get(Calendar.YEAR); //获取Calendar对象中的年
 				int  month=mycalendar.get(Calendar.MONTH);//获取Calendar对象中的月
 				int  day=mycalendar.get(Calendar.DAY_OF_MONTH);//获取这个月的第几天
-
 				DatePickerDialog dialog = new DatePickerDialog(myactivity, new DatePickerDialog.OnDateSetListener() {
 					@Override
 					public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -388,6 +391,7 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 				dialog.show();
 			}
 		});
+
 		update_sex.setOnClickListener(new View.OnClickListener () {
 			public void onClick(View v) {
 				LayoutInflater factory = LayoutInflater.from(myactivity);
@@ -402,9 +406,7 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 											arrayFruit[selectedIndex], Toast.LENGTH_SHORT)
 											.show ();
 									sex_tv.setText (arrayFruit[selectedIndex]);
-
 									return_sex = String.valueOf (selectedIndex);
-
 									new AlertDialog.Builder(myactivity).setTitle("确认修改吗？")
 											.setIcon(android.R.drawable.ic_dialog_info)
 											.setPositiveButton("确定", new DialogInterface.OnClickListener() {
@@ -498,8 +500,6 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 					TextView mtxtPatient=(TextView) mTitleView.findViewById (R.id.txtPatient);
 					mtxtPatient.setText ("电话");
 					telphonedlg.setCustomTitle(mTitleView);
-
-
 				}
 				telphonedlg.show();
 				dialogTitleLineColor(telphonedlg,R.color.gray_light);
@@ -557,6 +557,7 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 				dialogTitleLineColor(weixindlg,R.color.gray_light);
 			}
 		});
+
 		update_xiaoqu.setOnClickListener(new View.OnClickListener () {
 			public void onClick(View v) {
 
@@ -564,6 +565,7 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 				startActivityForResult(intent, SEL_XIAOQU);// 请求码
 			}
 		});
+
 		update_othertel.setOnClickListener(new View.OnClickListener () {
 			public void onClick(View v) {
 				LayoutInflater factory = LayoutInflater.from(myactivity);
@@ -578,24 +580,16 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 							.setView (EntryView)
 							.setPositiveButton ("保存", new DialogInterface.OnClickListener () {
 								public void onClick(DialogInterface dialog, int whichButton) {
-									System.out.println ("-------------->6");
 									EditText edit1 = (EditText) EntryView.findViewById (R.id.dialog_edit1);
 									EditText edit2 = (EditText) EntryView.findViewById (R.id.dialog_edit2);
 									return_emergency = edit1.getText ().toString ();
 									return_emergency_telphone = edit2.getText ().toString ();
-								/*T.showShort (myactivity,edit.getText ().toString ());
-								weixin_tv.setText (edit.getText ());
-								return_weixin=edit.getText ().toString ();
-								new Thread(UpdatWeixinThread).start();*/
-
 									emergencycontact_tv.setText (return_emergency);
-
 									new AlertDialog.Builder(myactivity).setTitle("确认修改吗？")
 											.setIcon(android.R.drawable.ic_dialog_info)
 											.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 												@Override
 												public void onClick(DialogInterface dialog, int which) {
-													// 点击“确认”后的操作
 													new Thread (UpdatEmergencyThread).start ();
 													dialog.dismiss ();
 												}
@@ -606,13 +600,11 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 													// 点击“返回”后的操作,这里不设置没有任何操作
 												}
 											}).show();
-
 								}
 							})
 							.setNegativeButton ("取消", new DialogInterface.OnClickListener () {
 								public void onClick(DialogInterface dialog, int whichButton) {
 									System.out.println ("-------------->2");
-
 								}
 							})
 							.create ();
@@ -620,12 +612,12 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 					TextView mtxtPatient=(TextView) mTitleView.findViewById (R.id.txtPatient);
 					mtxtPatient.setText ("紧急联系人");
 					emergencydlg.setCustomTitle(mTitleView);
-
 				}
 				emergencydlg.show();
 				dialogTitleLineColor(emergencydlg,R.color.gray_light);
 			}
 		});
+
 		SwitchButton switch_recmess=(SwitchButton)view.findViewById (R.id.switch_recmess);
 		switch_recmess.setOnChangeListener(new SwitchButton.OnChangeListener () {
 
@@ -654,7 +646,6 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 			public void onClick(View v) {
 				//wechatShare(0);//分享到微信好友
 				//wechatShare(1);//分享到微信朋友圈
-
 				LayoutInflater factory = LayoutInflater.from(myactivity);
 				if(sharedlg==null) {
 					sharedlg = new AlertDialog.Builder (myactivity)
@@ -685,11 +676,16 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 				}
 				sharedlg.show();
 				dialogTitleLineColor(sharedlg,R.color.gray_light);
-
-
-
 			}
 		});
+
+		update_shop.setOnClickListener(new View.OnClickListener () {
+			public void onClick(View v) {
+				myactivity.startActivity(new Intent(myactivity,ListConvenienceMyActivity.class));
+				myactivity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+			}
+		});
+
 		exit.setOnClickListener(new View.OnClickListener () {
 			public void onClick(View v) {
 				myapplication.exit ();
@@ -716,11 +712,9 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 			String thumb="http://www.bbxiaoqu.com/pc/img/qrcode.png";
 			Bitmap bmp=ImageLoader.getInstance().loadImageSync(thumb);
 			//msg.setThumbImage(bitmap);
-
 			Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp, 100, 100, true);
 			bmp.recycle();
 			msg.setThumbImage(thumbBmp);
-
 		SendMessageToWX.Req req = new SendMessageToWX.Req();
 		req.transaction = String.valueOf(System.currentTimeMillis());
 		req.message = msg;
@@ -853,6 +847,7 @@ public class FragmentPage4 extends Fragment implements ApiAsyncTask.ApiRequestLi
 				Bundle data = msg.getData ();
 				my_nickname.setText (data.getString ("username"));
 				my_userid.setText (data.getString ("userid"));
+				my_score.setText ("积分:"+data.getString ("score"));
 				username.setText (data.getString ("username"));
 				brithday_tv.setText (data.getString ("brithday"));
 				telphone_tv.setText (data.getString ("telphone"));

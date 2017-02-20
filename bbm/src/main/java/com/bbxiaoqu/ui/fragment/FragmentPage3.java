@@ -146,7 +146,7 @@ public class FragmentPage3 extends Fragment implements  ApiRequestListener,OnRef
 					String pos = data.getString("pos");
 					myusername.setText(username);
 					if(headface!=null&&headface.length ()>0) {
-						String headfaceurl = "http://api.bbxiaoqu.com/uploads/" + headface;
+						String headfaceurl = "https://api.bbxiaoqu.com/uploads/" + headface;
 						ImageLoader.getInstance ().displayImage (headfaceurl, myheadface, ImageOptions.getOptions ());
 					}
 					if(sex.equals ("0")) {

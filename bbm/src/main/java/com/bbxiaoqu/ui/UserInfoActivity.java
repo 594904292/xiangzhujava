@@ -79,14 +79,15 @@ public class UserInfoActivity extends BaseActivity implements OnClickListener {
 	TextView title;
 	TextView txt_userid;
 	TextView tv_score;
-	private EditText username;
+	private EditText username_et;
+	private EditText xiaoqu_et;
 	private String sex_str = "1";
 	private TextView txt=null;
 	private RadioGroup sex=null;
 	private RadioButton male=null;
 	private RadioButton female=null;
 	Button save;
-	Button score_btn;
+	Button selxiaoqu;
 	private String headfacepath = "";
 	private String headfacename = "";
 	private String score="";
@@ -103,6 +104,7 @@ public class UserInfoActivity extends BaseActivity implements OnClickListener {
 	private static final int CAMERA_REQUEST_CODE = 1;
 	private static final int RESULT_REQUEST_CODE = 2;
 	UserService uService = new UserService(UserInfoActivity.this);
+	public static final int SEL_XIAOQU    = 99;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -115,9 +117,12 @@ public class UserInfoActivity extends BaseActivity implements OnClickListener {
     private static final String[] sexs ={ " 男 " , "女" };
 	private void initView() {
 		title = (TextView) findViewById(R.id.title);
-		username = (EditText) findViewById(R.id.username);
+		username_et = (EditText) findViewById(R.id.username);
+		xiaoqu_et= (EditText) findViewById(R.id.xiaoqu_tv);
 		save = (Button) findViewById(R.id.save);
-		score_btn  = (Button) findViewById(R.id.score_btn);
+		selxiaoqu = (Button) findViewById(R.id.selxiaoqu);
+
+
 		txt_userid=(TextView) findViewById(R.id.txt_userid);
 		tv_score=(TextView) findViewById(R.id.score_tv);
 		this.txt=(TextView) super.findViewById(R.id.txt);
@@ -151,8 +156,8 @@ public class UserInfoActivity extends BaseActivity implements OnClickListener {
 	                public void onClick(DialogInterface dialog, int which) { 
 	                // 点击“确认”后的操作 
 	                	//更新本地库
-						if(username.getText().toString().length()>0) {
-							uService.updatenickname(username.getText().toString(), userid);
+						if(username_et.getText().toString().length()>0) {
+							uService.updatenickname(username_et.getText().toString(), userid);
 						}
 	    				if(headfacename!=null&&headfacename.length()>0)
 	    				{//远程,头像不为空
@@ -171,6 +176,13 @@ public class UserInfoActivity extends BaseActivity implements OnClickListener {
 	            }).show(); 
 			}
 		});
+		selxiaoqu.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				Intent intent = new Intent(UserInfoActivity.this, SearchCxhfdmActivity.class);
+				startActivityForResult(intent, SEL_XIAOQU);// 请求码
+			}
+
+			});
 		iv_photo = (ImageView) findViewById(R.id.iv_photo);
 		iv_photo.setOnClickListener(new OnClickListener() {
 			@Override
@@ -245,32 +257,39 @@ public class UserInfoActivity extends BaseActivity implements OnClickListener {
 
 	}
 
-
+	String load_xiaoqu="";
+	String load_xiaoquid="";
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// 结果码不等于取消时候
 		if (resultCode != RESULT_CANCELED) {
 			switch (requestCode) {
-			case IMAGE_REQUEST_CODE:
-				startPhotoZoom(data.getData());
-				break;
-			case CAMERA_REQUEST_CODE:
-				// 判断存储卡是否可以用，可用进行存储
-				String state = Environment.getExternalStorageState();
-				if (state.equals(Environment.MEDIA_MOUNTED)) {
-					File path = Environment
-							.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
-					File tempFile = new File(path, IMAGE_FILE_NAME);
-					startPhotoZoom(Uri.fromFile(tempFile));
-				} else {
-					Toast.makeText(getApplicationContext(), "未找到存储卡，无法存储照片！",
-							Toast.LENGTH_SHORT).show();
-				}
-				break;
-			case RESULT_REQUEST_CODE: // 图片缩放完成后
-				if (data != null) {
-					getImageToView(data);
-				}
+				case IMAGE_REQUEST_CODE:
+					startPhotoZoom(data.getData());
+					break;
+				case CAMERA_REQUEST_CODE:
+					// 判断存储卡是否可以用，可用进行存储
+					String state = Environment.getExternalStorageState();
+					if (state.equals(Environment.MEDIA_MOUNTED)) {
+						File path = Environment
+								.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+						File tempFile = new File(path, IMAGE_FILE_NAME);
+						startPhotoZoom(Uri.fromFile(tempFile));
+					} else {
+						Toast.makeText(getApplicationContext(), "未找到存储卡，无法存储照片！",
+								Toast.LENGTH_SHORT).show();
+					}
+					break;
+				case RESULT_REQUEST_CODE: // 图片缩放完成后
+					if (data != null) {
+						getImageToView(data);
+					}
+				case SEL_XIAOQU: // 选择小区
+					if (data != null) {
+						load_xiaoquid = data.getStringExtra("code");
+						load_xiaoqu = data.getStringExtra("name");
+						xiaoqu_et.setText(load_xiaoqu);
+					}
 				break;
 			}
 		}
@@ -357,7 +376,7 @@ public class UserInfoActivity extends BaseActivity implements OnClickListener {
 			HttpPost httprequest = new HttpPost(target);
 			List<NameValuePair> paramsList = new ArrayList<NameValuePair>();
 			paramsList.add(new BasicNameValuePair("_userid", myapplication.getUserId()));
-			paramsList.add(new BasicNameValuePair("_username", username.getText().toString()));
+			paramsList.add(new BasicNameValuePair("_username", username_et.getText().toString()));
 			try {
 				httprequest.setEntity(new UrlEncodedFormEntity(paramsList,"UTF-8"));
 				HttpClient HttpClient1 = CustomerHttpClient.getHttpClient();
@@ -392,14 +411,14 @@ public class UserInfoActivity extends BaseActivity implements OnClickListener {
 			List<NameValuePair> paramsList = new ArrayList<NameValuePair>();
 			paramsList.add(new BasicNameValuePair("userid", myapplication.getUserId()));
 			paramsList.add(new BasicNameValuePair("headface", headfacename));
-			paramsList.add(new BasicNameValuePair("username", username.getText().toString()));
+			paramsList.add(new BasicNameValuePair("username", username_et.getText().toString()));
  			paramsList.add(new BasicNameValuePair("brithday", ""));
 			paramsList.add(new BasicNameValuePair("age", ""));
 			paramsList.add(new BasicNameValuePair("sex", sex_str));
 			paramsList.add(new BasicNameValuePair("telphone", ""));
 			paramsList.add(new BasicNameValuePair("weixin", ""));
-			paramsList.add(new BasicNameValuePair("community", ""));
-			paramsList.add(new BasicNameValuePair("community_id", ""));
+			paramsList.add(new BasicNameValuePair("community", load_xiaoqu));
+			paramsList.add(new BasicNameValuePair("community_id", load_xiaoquid));
 			paramsList.add(new BasicNameValuePair("community_lat", ""));
 			paramsList.add(new BasicNameValuePair("community_lng", ""));
 			try {
@@ -473,7 +492,7 @@ public class UserInfoActivity extends BaseActivity implements OnClickListener {
 			}
 			if(msg.what==2) {
 				Toast.makeText(UserInfoActivity.this, "昵称已存在",Toast.LENGTH_SHORT).show();
-				username.setText("");
+				username_et.setText("");
 			}
 		}
 	};
@@ -549,7 +568,7 @@ public class UserInfoActivity extends BaseActivity implements OnClickListener {
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
 			Bundle data = msg.getData();
-			username.setText(data.getString("username"));
+			username_et.setText(data.getString("username"));
 			if(data.getString("sex").equals("1"))
 			{
 				male.setChecked(true);

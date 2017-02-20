@@ -122,7 +122,8 @@ public class ViewActivity extends BaseActivity implements OnItemClickListener,Ap
 	private TextView sendtimetv ;
 	private TextView sendaddresstv ;
 
-	private TextView chat_btn;//底部
+	private TextView left_chat_btn;//底部
+	private TextView right_chat_btn;//底部
 	private TextView btn_gz;//右边
 	private TextView inforeport_btn;//举报
 	private Button evaluate_btn;//评价帮助我的人
@@ -456,63 +457,47 @@ public class ViewActivity extends BaseActivity implements OnItemClickListener,Ap
 				}
 			}
 		});
-
-		chat_btn = (TextView) findViewById(R.id.chat_btn);
-		chat_btn.setOnClickListener(new OnClickListener() {
+		left_chat_btn = (TextView) findViewById(R.id.left_chat_btn);
+		left_chat_btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (!NetworkUtils.isNetConnected(myapplication)) {
 					T.showShort(myapplication, "当前无网络连接！");
 					NetworkUtils.showNoNetWorkDlg(ViewActivity.this);
 					return;
 				}
-
-				LayoutInflater factory = LayoutInflater.from(ViewActivity.this);
-				final View sostype_EntryView = factory.inflate(R.layout.dialog_sostype, null);
-				if(seltypedialog==null) {
-					seltypedialog = new AlertDialog.Builder (ViewActivity.this)
-							.setTitle ("请选择帮助的类型")
-							.setView (sostype_EntryView)
-							.setPositiveButton ("确定", new DialogInterface.OnClickListener () {
-								public void onClick(DialogInterface dialog, int whichButton) {
-									RadioGroup sossel = (RadioGroup) sostype_EntryView.findViewById (R.id.sos_select);
-									RadioButton radioButton = (RadioButton) sostype_EntryView.findViewById (sossel.getCheckedRadioButtonId ());
-									String text = radioButton.getText ().toString ();
-									if (text.equals ("在线聊天")) {
-										if(senduserid.equals (myapplication.getUserId ())) {
-											Toast.makeText(ViewActivity.this, "请选择与其他人聊天", Toast.LENGTH_SHORT).show();
-										}else{
-											bmaction = "add";
- 											new Thread (savebmThread).start ();
-											adduserhelpinfotype = "chat";
-											new Thread (AddInfoHelpUserThread).start ();
-											Intent intent = new Intent (ViewActivity.this, ChattingActivity.class);
-											Bundle arguments = new Bundle ();
-											arguments.putString ("to", senduserid);
-											arguments.putString ("my", myapplication.getUserId ());
-											intent.putExtras (arguments);
-											startActivity (intent);
-										}
-									} else if (text.equals ("文字评论")) {
-										Intent Intent1 = new Intent ();
-										Intent1.setClass (myapplication, DiscuzzActivity.class);
-										adduserhelpinfotype = "pl";
-										Bundle arguments = new Bundle ();
-										arguments.putString ("put", "false");
-										arguments.putString ("guid", guid);
-										Intent1.putExtras (arguments);
-										startActivity (Intent1);
-									}
-								}
-							})
-							.setNegativeButton ("取消", new DialogInterface.OnClickListener () {
-								public void onClick(DialogInterface dialog, int whichButton) {
-									System.out.println ("-------------->2");
-
-								}
-							})
-							.create ();
+				if(senduserid.equals (myapplication.getUserId ())) {
+					Toast.makeText(ViewActivity.this, "请选择与其他人聊天", Toast.LENGTH_SHORT).show();
+				}else{
+					bmaction = "add";
+					new Thread (savebmThread).start ();
+					adduserhelpinfotype = "chat";
+					new Thread (AddInfoHelpUserThread).start ();
+					Intent intent = new Intent (ViewActivity.this, ChattingActivity.class);
+					Bundle arguments = new Bundle ();
+					arguments.putString ("to", senduserid);
+					arguments.putString ("my", myapplication.getUserId ());
+					intent.putExtras (arguments);
+					startActivity (intent);
 				}
-				seltypedialog.show();
+			}
+		});
+
+		right_chat_btn = (TextView) findViewById(R.id.right_chat_btn);
+		right_chat_btn.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				if (!NetworkUtils.isNetConnected(myapplication)) {
+					T.showShort(myapplication, "当前无网络连接！");
+					NetworkUtils.showNoNetWorkDlg(ViewActivity.this);
+					return;
+				}
+				Intent Intent1 = new Intent ();
+				Intent1.setClass (myapplication, DiscuzzActivity.class);
+				adduserhelpinfotype = "pl";
+				Bundle arguments = new Bundle ();
+				arguments.putString ("put", "false");
+				arguments.putString ("guid", guid);
+				Intent1.putExtras (arguments);
+				startActivity (Intent1);
 			}
 		});
 
@@ -933,14 +918,17 @@ public class ViewActivity extends BaseActivity implements OnItemClickListener,Ap
 						evaluate_btn.setVisibility (View.VISIBLE);//我来帮按钮
 						btn_gz.setVisibility(View.GONE);
 						rl_bottom.setVisibility (View.VISIBLE);//我来帮按钮
-						chat_btn.setVisibility (View.VISIBLE);//我来帮按钮
+						left_chat_btn.setVisibility (View.VISIBLE);//我来帮按钮
+						right_chat_btn.setVisibility (View.VISIBLE);//我来帮按钮
+
 					}else
 					{
 						inforeport_btn.setVisibility (View.VISIBLE);//举报
 						evaluate_btn.setVisibility (View.GONE);//我来帮按钮
 						btn_gz.setVisibility(View.VISIBLE);
 						rl_bottom.setVisibility (View.VISIBLE);//我来帮按钮
-						chat_btn.setVisibility(View.VISIBLE);//我来帮按钮
+						left_chat_btn.setVisibility (View.VISIBLE);//我来帮按钮
+						right_chat_btn.setVisibility(View.VISIBLE);//我来帮按钮
 						MessGzService messgzService = new MessGzService(ViewActivity.this);
 						boolean ishavesave = messgzService.isexit(guid,myapplication.getUserId());
 						if(ishavesave) {

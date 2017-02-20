@@ -64,7 +64,6 @@ public class FragmentInfo1 extends Fragment  implements NewListViewAdapter.Callb
 		view= inflater.inflate(R.layout.fragment_info_1, null);
 		myapplication = (DemoApplication) this.getActivity().getApplication();
 		mSession = Session.get(myapplication);
-
 		lstv = (NewAutoListView) view.findViewById(R.id.infolstv_1);
 		adapter = new NewListViewAdapter (this.getActivity(), dataList,this);
 		lstv.setAdapter(adapter);
@@ -155,6 +154,7 @@ public class FragmentInfo1 extends Fragment  implements NewListViewAdapter.Callb
 							item.put("sendnickname", String.valueOf(customJson.getString("username").toString()));
 							item.put("headface", String.valueOf(customJson.getString("headface").toString()));
 							item.put("sex", String.valueOf(customJson.getString("sex").toString()));
+							item.put("score", String.valueOf(customJson.getString("score").toString()));
 							item.put("community", String.valueOf(customJson.getString("community").toString()));
 							item.put("city", String.valueOf(customJson.getString("city").toString()));
 							item.put("street", String.valueOf(customJson.getString("street").toString()));
@@ -257,17 +257,13 @@ public class FragmentInfo1 extends Fragment  implements NewListViewAdapter.Callb
 		new AlertDialog.Builder(this.getActivity ())
 				.setTitle("操作")
 				.setIcon(android.R.drawable.ic_dialog_info)
-				//.setSingleChoiceItems(new String[] {"choice 1","choice 2","choice 3","choice 4"}, 0, new DialogInterface.OnClickListener() {
 				.setItems(PK, new DialogInterface.OnClickListener() {
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						// TODO Auto-generated method stub
 						if (PK[which].equals("删除")) {
-							/*sel_guid = dataList.get(location - 1).get("guid").toString();
-							System.out.println(sel_guid);*/
 							new Thread(DelItem).start();
-
 						}
 					}
 				})

@@ -6,6 +6,11 @@
     <color name="red">#E1423C</color>
     <color name="translucence">#506050</color>
     <color name="bg_gray">#e2e2e2</color>
+    <color name="label_orange">#fff7f6</color>
+
+    <color name="app_buttom_left_bg">#fe6f6f</color>
+    <color name="app_buttom_right_bg">#79caf5 </color>
+
     <color name="green">#65e17b</color>
     <color name="app_chat_send_btn_bg">#e86762</color>
     <color name="buttom_nav_bg">#E6E6E6</color>

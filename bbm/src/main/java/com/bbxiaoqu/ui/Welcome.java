@@ -66,6 +66,24 @@ public class Welcome extends Activity implements ApiRequestListener,OnRefreshLis
 		StrictMode.setThreadPolicy (policy);
 		view = View.inflate (this, R.layout.welcome, null);
 		setContentView (view);
+		Intent intent = getIntent();
+		String scheme = intent.getScheme();
+		Uri uri = intent.getData();
+		System.out.println("scheme:"+scheme);
+		if (uri != null) {
+			String host = uri.getHost();
+			String dataString = intent.getDataString();
+			String id = uri.getQueryParameter("d");
+			String path = uri.getPath();
+			String path1 = uri.getEncodedPath();
+			String queryString = uri.getQuery();
+			System.out.println("host:"+host);
+			System.out.println("dataString:"+dataString);
+			System.out.println("id:"+id);
+			System.out.println("path:"+path);
+			System.out.println("path1:"+path1);
+			System.out.println("queryString:"+queryString);
+		}
 		final Context context = getApplicationContext ();
 		mSession = Session.get (context);
 		splashimage = (ImageView) view.findViewById (R.id.splash);

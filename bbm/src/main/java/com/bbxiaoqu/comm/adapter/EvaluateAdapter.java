@@ -79,7 +79,7 @@ public class EvaluateAdapter extends BaseAdapter {
 		/*} else {
 			holder_img = (ViewHolderimg) convertView.getTag();
 		}*/
-		String headfaceurl = "http://api.bbxiaoqu.com/uploads/"+list.get(position).get("headface").toString();
+		String headfaceurl = "https://api.bbxiaoqu.com/uploads/"+list.get(position).get("headface").toString();
 		if(list.get(position).get("headface").toString().length()>0) {
 			ImageLoader.getInstance().displayImage(headfaceurl, holder_img.userhead, ImageOptions.getOptions());
 		}else {

@@ -3,10 +3,28 @@
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="android:Theme.Light">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <!-- 小字体 -->
+    <style name="AppTheme_Small" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+
+    <!-- 大字体 -->
+    <style name="AppTheme_Large" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- 巨大字体 -->
+    <style name="AppTheme_Huge" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textSize">22sp</item>
+    </style>
 
     <style name="Theme.DeviceDefault.Dialog.Alert"  parent="@android:style/Theme.Holo.Light.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -87,7 +105,7 @@
 	    <item name="android:textSize">14.0sp</item>
         <item name="android:textColor">@color/red</item>
 	</style>
-	
+
     <style name="tab_style">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -409,7 +427,7 @@
         <item name="android:backgroundDimEnabled">true</item>
         <!-- 模糊 -->
     </style>
-    
+
       <style name="splash_text">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">@dimen/font_size_s</item>
