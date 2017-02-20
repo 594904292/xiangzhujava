@@ -5,40 +5,33 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="28301716853466"
+    timestamp="1877071028721"
     token="-1009276222268453997"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="25916" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="565" />
     <task
         name="verifier"
-        duration="0" />
+        duration="15" />
 
     <artifact
-        location="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-        type="RESOURCES" />
+        location="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\outputs\apk\bbm-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="28184290675498"
-        verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\outputs\apk\bbm-debug.apk"
-            type="MAIN" />
-    </build>
-    <build
-        timestamp="28301716853466"
+        timestamp="28848390085076"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
+            location="F:\AndroidStudio\bbxiaoquforandroid\bbm\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

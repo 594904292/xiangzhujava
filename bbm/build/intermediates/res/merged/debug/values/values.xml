@@ -94,6 +94,8 @@
     <color name="alert_notify_dialog_btn_bg_pressed">#ffe0e0e0</color>
     <item name="anim_increase_text" type="color">@color/ss_comment_digg_text_highlight</item>
     <item name="anim_increase_text_night" type="color">@color/ss_comment_digg_text_highlight_night</item>
+    <color name="app_buttom_left_bg">#fe6f6f</color>
+    <color name="app_buttom_right_bg">#79caf5 </color>
     <color name="app_chat_send_btn_bg">#e86762</color>
     <color name="app_textbtn">#ff999999</color>
     <color name="arc_progress_background">#ffffffff</color>
@@ -339,6 +341,7 @@
     <color name="item_title_disabled_night">#ff505050</color>
     <color name="item_title_normal">#ff444444</color>
     <item name="item_title_normal_night" type="color">@color/default_text_night</item>
+    <color name="label_orange">#fff7f6</color>
     <color name="lighter_gray">#ffd3d3d3</color>
     <color name="lightgray">#ffd3d3d3</color>
     <color name="list_city_category_hint_text">#ff999999</color>
@@ -1092,8 +1095,19 @@
         <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
     </style>
     <style name="AppTheme" parent="android:Theme.Light">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme_Huge" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+    <style name="AppTheme_Large" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="AppTheme_Small" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textSize">12sp</item>
     </style>
     <style name="DialogStyleBottom" parent="android:Theme.Dialog">
         <item name="android:windowAnimationStyle">@style/AnimBottom</item>

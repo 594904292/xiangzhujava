@@ -58,15 +58,15 @@ public class Session extends Observable {
     /** The application uid */
     private Boolean islogin=false;
     private Boolean isnotice=true;
-    private String userid;
-    private String username;
-    private String password;
-   	private String headface;
-    private String xiaoquid;
-    private String xiaoquname;
-    private String lat;
-    private String lng;
-    private String rang;
+    private String userid= "";
+    private String username= "";
+    private String password= "";
+   	private String headface= "";
+    private String xiaoquid= "";
+    private String xiaoquname= "";
+    private String lat= "";
+    private String lng= "";
+    private String rang= "";
     private String firststart = "true";
     private Boolean issavepass = true;
 

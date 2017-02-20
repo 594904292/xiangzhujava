@@ -2,6 +2,7 @@ package com.bbxiaoqu.comm.adapter;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,11 +86,16 @@ public class NewListViewAdapter extends BaseAdapter implements OnClickListener {
 			holder_img.headface = (XCRoundImageView) convertView.findViewById(R.id.headface);
 			holder_img.username = (TextView) convertView.findViewById(R.id.username);
 			holder_img.sex = (ImageView) convertView.findViewById(R.id.sex_img);
+			holder_img.score = (TextView) convertView.findViewById(R.id.score);
+
+
+//			Typeface tf=((DemoApplication)this.activity.getApplication()).getHannotateSCfont();
+//			holder_img.score.setTypeface(tf);
+
 
 			holder_img.address = (TextView) convertView.findViewById(R.id.address);
 			holder_img.distance = (TextView) convertView.findViewById(R.id.distance);
 			holder_img.timeago = (TextView) convertView.findViewById(R.id.timeago);
-
 			holder_img.sendcontent = (TextView) convertView.findViewById(R.id.sendcontent);
 
 			holder_img.img_row = (RelativeLayout) convertView.findViewById(R.id.img_row);
@@ -101,21 +107,19 @@ public class NewListViewAdapter extends BaseAdapter implements OnClickListener {
 			holder_img.statusimg = (ImageView) convertView.findViewById(R.id.statusimg);
 			convertView.setTag(list.get(position).get("guid").toString().trim());
 
-			String headfaceurl = "http://api.bbxiaoqu.com/uploads/" + list.get(position).get("headface").toString();
+			String headfaceurl = "https://api.bbxiaoqu.com/uploads/" + list.get(position).get("headface").toString();
 			if (list.get(position).get("headface").toString().length() > 0) {
 				ImageLoader.getInstance().displayImage(headfaceurl, holder_img.headface, ImageOptions.getOptions());
-				//ImageSize targetSize = new ImageSize(100,100); // result Bitmap will be fit to this size
-				//Bitmap bmp = ImageLoader.getInstance().loadImageSync(headfaceurl, targetSize, ImageOptions.getOptions());
 			} else {
 				holder_img.headface.setImageResource(R.mipmap.xz_wo_icon);
 			}
 			holder_img.username.setText(list.get(position).get("sendnickname").toString());
-			//holder_img.sex.setImageDrawable (new Drawable (R.mipmap.xz_xiang_icon));
 			if (list.get(position).get("sex").toString().equals("0")) {
 				holder_img.sex.setImageResource(R.mipmap.xz_nan_icon);
 			} else {
 				holder_img.sex.setImageResource(R.mipmap.xz_nv_icon);
 			}
+			holder_img.score.setText(list.get(position).get("score").toString()+"积分");
 			holder_img.address.setText(list.get(position).get("street").toString());
 			holder_img.distance.setText(list.get(position).get("distance").toString());
 			holder_img.timeago.setText(list.get(position).get("date").toString());
@@ -193,6 +197,7 @@ public class NewListViewAdapter extends BaseAdapter implements OnClickListener {
 		XCRoundImageView headface;
 		TextView username;
 		ImageView sex;
+		TextView score;
 		TextView address;
 		TextView distance;
 		TextView timeago;

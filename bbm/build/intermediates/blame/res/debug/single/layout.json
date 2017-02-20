@@ -40,6 +40,10 @@
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\item_message.xml"
     },
     {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\listconvenienceinfo_layout.xml",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\listconvenienceinfo_layout.xml"
+    },
+    {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_gzinfo.xml",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\activity_gzinfo.xml"
     },
@@ -62,10 +66,6 @@
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_community.xml",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\activity_community.xml"
-    },
-    {
-        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_main.xml",
-        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\activity_main_main.xml"
     },
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_select_photo.xml",
@@ -142,6 +142,10 @@
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_viewlist.xml",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\activity_viewlist.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_convenience_4.xml",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\fragment_convenience_4.xml"
     },
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_faq.xml",
@@ -264,6 +268,10 @@
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\fragment_info_3.xml"
     },
     {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_publish_shopinfo.xml",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\activity_publish_shopinfo.xml"
+    },
+    {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_agreement.xml",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\activity_agreement.xml"
     },
@@ -288,6 +296,10 @@
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\dialog_sostype.xml"
     },
     {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_select_address.xml",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\activity_select_address.xml"
+    },
+    {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\radio_buttong_bg.xml",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\radio_buttong_bg.xml"
     },
@@ -302,6 +314,10 @@
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\main_fragment_list_layout.xml",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\main_fragment_list_layout.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_convenience_1.xml",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\fragment_convenience_1.xml"
     },
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_gonggao.xml",
@@ -344,12 +360,12 @@
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\listview_item_friends.xml"
     },
     {
-        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\settings.xml",
-        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\settings.xml"
-    },
-    {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\pay.xml",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\pay.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\settings.xml",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\settings.xml"
     },
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\listview_item_dynamic.xml",
@@ -416,6 +432,10 @@
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\refresh_list_header.xml"
     },
     {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_convenience_3.xml",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\fragment_convenience_3.xml"
+    },
+    {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_info_1.xml",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\fragment_info_1.xml"
     },
@@ -458,6 +478,10 @@
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_overlay.xml",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\activity_overlay.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_location_list.xml",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\activity_location_list.xml"
     },
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\activity_publish.xml",
@@ -622,5 +646,9 @@
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\item_gridview_addcity.xml",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\item_gridview_addcity.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_convenience_2.xml",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\layout\\fragment_convenience_2.xml"
     }
 ]

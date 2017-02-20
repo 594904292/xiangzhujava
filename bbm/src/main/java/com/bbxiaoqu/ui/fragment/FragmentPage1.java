@@ -23,12 +23,16 @@ import android.widget.ViewSwitcher;
 import com.bbxiaoqu.AppInfo;
 import com.bbxiaoqu.DemoApplication;
 import com.bbxiaoqu.R;
+import com.bbxiaoqu.Session;
 import com.bbxiaoqu.api.MarketAPI;
+import com.bbxiaoqu.client.baidu.Utils;
 import com.bbxiaoqu.comm.tool.CustomerHttpClient;
 import com.bbxiaoqu.comm.tool.StreamTool;
 import com.bbxiaoqu.comm.tool.T;
+import com.bbxiaoqu.ui.ListConvenienceActivity;
 import com.bbxiaoqu.ui.ListInfoActivity;
 import com.bbxiaoqu.ui.LoadingView;
+import com.bbxiaoqu.ui.MainTabActivity;
 import com.bbxiaoqu.ui.PublishActivity;
 
 import org.apache.http.HttpResponse;
@@ -85,14 +89,16 @@ public class FragmentPage1 extends Fragment implements  ApiRequestListener,OnRef
 
 	String load_emergency="";
 	String load_emergencytelphone="";
+	LinearLayout tel0;
 	LinearLayout tel1;
 	LinearLayout tel2;
 	LinearLayout tel3;
-
+	Button tel0_btn;
 	Button tel1_btn;
 	Button tel2_btn;
 	Button tel3_btn;
 	LoadingView mLoadView;
+	protected Session mSession;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -101,7 +107,7 @@ public class FragmentPage1 extends Fragment implements  ApiRequestListener,OnRef
 		mLoadView = (LoadingView) view.findViewById (R.id.loading_view);
 		//mLoadView.setStatue(LoadingView.LOADING);
 		mLoadView.setRefrechListener(this);
-
+		mSession= Session.get(myapplication);
 		initViews();
 
 		//imgIds = new int[]{R.mipmap.banner1,R.mipmap.banner2,R.mipmap.banner3,R.mipmap.banner4};
@@ -131,9 +137,9 @@ public class FragmentPage1 extends Fragment implements  ApiRequestListener,OnRef
 		setImageBackground(currentPosition);
 
 		MarketAPI.getUserInfo(myapplication, this,myapplication.getUserId());
+		MarketAPI.gonggao(myapplication, this);
 		return view;
 	}
-
 
 	private void initViews() {
 		linearlayout_body1= (RelativeLayout) view.findViewById(R.id.body1);
@@ -159,6 +165,7 @@ public class FragmentPage1 extends Fragment implements  ApiRequestListener,OnRef
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+
 				Intent intent=new Intent(myapplication,ListInfoActivity.class);
 				Bundle bundle = new Bundle();
 				//bundle.putInt("infocatagroy", 3);
@@ -167,13 +174,27 @@ public class FragmentPage1 extends Fragment implements  ApiRequestListener,OnRef
 			}
 		});
 
+		tel0=(LinearLayout) view.findViewById(R.id.line_0);
 		tel1=(LinearLayout) view.findViewById(R.id.line_1);
 		tel2=(LinearLayout) view.findViewById(R.id.line_2);
 		tel3=(LinearLayout) view.findViewById(R.id.line_3);
-
+		tel0_btn=(Button) view.findViewById(R.id.tel0);
 		tel1_btn=(Button) view.findViewById(R.id.tel1);
 		tel2_btn=(Button) view.findViewById(R.id.tel2);
 		tel3_btn=(Button) view.findViewById(R.id.tel3);
+		tel0.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//Intent call = new Intent(Intent.ACTION_DIAL, uri); //显示拨号界面
+
+				Intent intent=new Intent(myapplication, ListConvenienceActivity.class);
+				Bundle bundle = new Bundle();
+				intent.putExtras(bundle);
+				startActivity(intent);
+
+			}
+		});
 		tel1.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -209,7 +230,16 @@ public class FragmentPage1 extends Fragment implements  ApiRequestListener,OnRef
 				}
 			}
 		});
-
+		tel0_btn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent=new Intent(myapplication, ListConvenienceActivity.class);
+				Bundle bundle = new Bundle();
+				intent.putExtras(bundle);
+				startActivity(intent);
+			}
+		});
 
 		tel1_btn.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -370,8 +400,35 @@ public class FragmentPage1 extends Fragment implements  ApiRequestListener,OnRef
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					Utils.makeEventToast(this.myapplication, "userinfo xml解释错误",false);
 				}
 				break;
+			case MarketAPI.ACTION_GONGGAO:
+				HashMap<String, String> result1 = (HashMap<String, String>) obj;
+				String JsonContext1=result1.get("gonggao");
+				if(JsonContext1.length()>0)
+				{
+					JSONArray ggjsonarray;
+					try {
+						ggjsonarray = new JSONArray(JsonContext1);
+						JSONObject ggjsonobject = ggjsonarray.getJSONObject(0);
+						String id = ggjsonobject.getString("id");
+						String title = ggjsonobject.getString("title");
+						String content = ggjsonobject.getString("content");
+						String publishdate = ggjsonobject.getString("publishdate");
+						mSession.seGgid(id);
+						mSession.setGgcontent(title);
+						mSession.setGgdate(publishdate);
+						//gonggao.setText(title);
+						//gonggao.setTag(id);
+					} catch (JSONException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+						Utils.makeEventToast(this.myapplication, "gonggao xml解释错误",false);
+					}
+				}
+				break;
+
 			default:
 				break;
 		}

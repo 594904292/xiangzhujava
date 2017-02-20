@@ -136,6 +136,10 @@
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\drawable\\row_selector.xml"
     },
     {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bcg_btn.xml",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\drawable\\shape_bcg_btn.xml"
+    },
+    {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_head_pressed.xml",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\drawable\\bg_head_pressed.xml"
     },
@@ -514,6 +518,10 @@
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_row_center.xml",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\drawable\\bg_row_center.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_label_orange.xml",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\drawable\\shape_label_orange.xml"
     },
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\drawable\\bdspeech_btn_recognizing_deep.9.png",

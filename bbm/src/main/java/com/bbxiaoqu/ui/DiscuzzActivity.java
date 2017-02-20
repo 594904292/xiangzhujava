@@ -72,6 +72,7 @@ public class DiscuzzActivity extends BaseActivity implements ApiRequestListener 
 	private String infoid = "0";
 	private String senduserid = "";
 	private String sendusername = "";
+	private String sex="";
 	private String current_login_userid = "";
 	private String current_login_usernickname = "";
 	private String content = "";
@@ -99,6 +100,7 @@ public class DiscuzzActivity extends BaseActivity implements ApiRequestListener 
 	private String bmaction = "";
 	private String adduserhelpinfotype = "";
 	private JSONObject jsonobject;// 通过GUID获取的消息
+	private ImageView sex_img;
 	private ImageView headface_img;
 	private TextView sendusertv;
 	private TextView contenttv;
@@ -196,7 +198,7 @@ public class DiscuzzActivity extends BaseActivity implements ApiRequestListener 
 
 
 		//ext_mLayout = (LinearLayout) findViewById(R.id.layout_container_ext);
-
+		sex_img = (ImageView) findViewById(R.id.sex_img);
 		headface_img = (ImageView) findViewById (R.id.headface);
 		headface_img.setOnClickListener (new OnClickListener () {
 			public void onClick(View v) {
@@ -368,7 +370,7 @@ public class DiscuzzActivity extends BaseActivity implements ApiRequestListener 
 			HttpConnectionParams.setConnectionTimeout (httpParameters, 30000);
 			HttpConnectionParams.setSoTimeout (httpParameters, 30000);
 			int result;
-			String target = myapplication.getlocalhost () + "discuzz.php";
+			String target = myapplication.getlocalhost () + "discuzz_v1.php";
 			HttpPost httprequest = new HttpPost (target);
 			httprequest.setParams (httpParameters);
 			List<NameValuePair> paramsList = new ArrayList<NameValuePair> ();
@@ -501,6 +503,7 @@ public class DiscuzzActivity extends BaseActivity implements ApiRequestListener 
 						infoid = jsonobject.getString ("id");
 						content = jsonobject.getString ("content");
 						headface = jsonobject.getString ("headface");
+						sex = jsonobject.getString("sex");
 						sendtime = jsonobject.getString ("sendtime");
 						infocatagroy = jsonobject.getString ("infocatagroy");
 						address = jsonobject.getString ("address");
@@ -516,6 +519,13 @@ public class DiscuzzActivity extends BaseActivity implements ApiRequestListener 
 						solutionid = jsonobject.getString ("solutionid");
 						if (sendusername.equals ("")) {
 							sendusername = "匿名";
+						}
+						if(sex.equals ("0"))
+						{
+							sex_img.setImageResource (R.mipmap.xz_nan_icon);
+						}else
+						{
+							sex_img.setImageResource (R.mipmap.xz_nv_icon);
 						}
 						sendusertv.setText (sendusername);
 						contenttv.setText (content);

@@ -8,9 +8,11 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
@@ -18,6 +20,8 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,26 +43,27 @@ import com.bbxiaoqu.comm.widget.TextViewPlus;
 import com.bbxiaoqu.comm.view.BaseActivity;
 import com.bbxiaoqu.ui.LoadingView.OnRefreshListener;
 
+import static com.bbxiaoqu.R.id.sl_center;
+
 public class LoginActivity extends BaseActivity implements OnFocusChangeListener,ApiRequestListener ,OnRefreshListener{
 	private DemoApplication myapplication;
 	View view;
 	EditText etUsername;
 	EditText etPassword;
+	ScrollView sl_center;
 	Button login, register;
 	TextView searchpass;
 	TextViewPlus savepass;
+	LinearLayout logingform;
 	UserService uService = new UserService(LoginActivity.this);
 	private static final int DIALOG_PROGRESS = 0;
-
 	LoadingView mLoadView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Utils.logStringCache = Utils.getLogText(getApplicationContext());
-		//view=setContentView(R.layout.activity_login);
 		view = View.inflate (this, R.layout.activity_login, null);
 		setContentView (view);
-
 		Resources resource = this.getResources();
 		String pkgName = this.getPackageName();
 		myapplication = (DemoApplication) this.getApplication();
@@ -69,9 +74,30 @@ public class LoginActivity extends BaseActivity implements OnFocusChangeListener
 
 	private void initView() {
 		// TODO Auto-generated method stub
+
+		sl_center = (ScrollView) findViewById(R.id.sl_center);
+		logingform=(LinearLayout) findViewById(R.id.logingform);
 		etUsername = (EditText) findViewById(R.id.username);
 		etPassword = (EditText) findViewById(R.id.password);
-		//etPassword.setImeOptions(EditorInfo.IME_ACTION_SEND);
+		login = (Button) findViewById(R.id.login);
+		register = (Button) findViewById(R.id.register);
+		searchpass = (TextView) findViewById(R.id.searchpass);
+		savepass= (TextViewPlus) findViewById(R.id.savepass);
+		logingform.setOnTouchListener(new View.OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				closeBoard(v.getContext());
+				return false;
+			}
+		});
+
+		etUsername.setOnTouchListener(new View.OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				changeScrollView();
+				return false;
+			}
+		});
 		etPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 			public boolean onEditorAction(TextView v, int actionId,KeyEvent event)  {
 				if (actionId==EditorInfo.IME_ACTION_SEND)
@@ -82,30 +108,66 @@ public class LoginActivity extends BaseActivity implements OnFocusChangeListener
 				return false;
 			}
 		});
-
-
 		String userid="";
 		if(mSession.getUid()!=null)
 		{
 			userid=mSession.getUid();
 		}
 		etUsername.setText(userid);
-		login = (Button) findViewById(R.id.login);
-		register = (Button) findViewById(R.id.register);
-		searchpass = (TextView) findViewById(R.id.searchpass);
-		savepass= (TextViewPlus) findViewById(R.id.savepass);
+		boolean issavepass=mSession.getIssavepass ();
+		if(issavepass)
+		{
+			System.out.println("-------------------------------------");
+			Drawable drawable= getResources()
+					.getDrawable(R.mipmap.agree);
+			drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+					drawable.getMinimumHeight());
+			savepass.setCompoundDrawables(drawable,null,null,null);
+		}else
+		{
+			System.out.println("======================================");
+			Drawable drawable= getResources()
+					.getDrawable(R.mipmap.against);
+			drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+					drawable.getMinimumHeight());
+			savepass.setCompoundDrawables(drawable,null,null,null);
+		}
+		/*if(mSession.getIssavepass ())
+		{
+			Drawable drawable= getResources()
+					.getDrawable(R.mipmap.agree);
+			drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+					drawable.getMinimumHeight());
+			savepass.setCompoundDrawables(drawable,null,null,null);
+		}else
+		{
+			Drawable drawable= getResources()
+					.getDrawable(R.mipmap.against);
+			drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+					drawable.getMinimumHeight());
+			savepass.setCompoundDrawables(drawable,null,null,null);
+		}*/
+
+	/*	if(mSession.getIssavepass ())
+		{
+			String passwd="";
+			if(mSession.getPassword()!=null)
+			{
+				passwd=mSession.getPassword();
+			}
+			etPassword.setText(passwd);
+		}*/
+
 		savepass.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				TextViewPlus obj=(TextViewPlus)v;
 				if(mSession.getIssavepass ())
 				{
-
 					Drawable drawable= getResources()
 							.getDrawable(R.mipmap.against);
 					drawable.setBounds(0, 0, drawable.getMinimumWidth(),
 							drawable.getMinimumHeight());
 					obj.setCompoundDrawables(drawable,null,null,null);
-
 					mSession.setIsSavepass (false);
 				}else
 				{
@@ -141,9 +203,34 @@ public class LoginActivity extends BaseActivity implements OnFocusChangeListener
 			}
 		});
 	}
-	
-	
-		private void login() {
+
+	public static void closeBoard(Context mcontext) {
+		InputMethodManager imm = (InputMethodManager) mcontext
+				.getSystemService(Context.INPUT_METHOD_SERVICE);
+		// imm.hideSoftInputFromWindow(myEditText.getWindowToken(), 0);
+		if (imm.isActive())  //一直是true
+			imm.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT,
+					InputMethodManager.HIDE_NOT_ALWAYS);
+	}
+
+	/**
+	 * 使ScrollView指向底部
+	 */
+	private void changeScrollView(){
+		h.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				sl_center.scrollTo(0, sl_center.getHeight());
+			}
+		}, 300);
+	}
+
+	Handler h = new Handler(){
+		public void handleMessage(Message msg) {
+		};
+	};
+
+	private void login() {
 	        if (!isFinishing()) {
 	            showDialog(DIALOG_PROGRESS);
 	        } else {
@@ -154,7 +241,6 @@ public class LoginActivity extends BaseActivity implements OnFocusChangeListener
 			String passWord= etPassword.getText().toString();			
 			MarketAPI.login(getApplicationContext(), this, userName, passWord);
 		}
-
 		@Override
 		protected void onPrepareDialog(int id, Dialog dialog) {
 			super.onPrepareDialog(id, dialog);
@@ -174,7 +260,6 @@ public class LoginActivity extends BaseActivity implements OnFocusChangeListener
 		     	return super.onCreateDialog(id);
 		     }
 		 }
-	
 
 	protected void onDestroy() {
 		super.onDestroy();
@@ -221,14 +306,11 @@ public class LoginActivity extends BaseActivity implements OnFocusChangeListener
 						user.setTelphone(telphone);
 						user.setHeadface(headface);
 						uService.register(user);// 注册一个
-
 						mSession.setUid(userid);
 						mSession.setUserName(username);
 						mSession.setHeadface(headface);
 						mSession.setPassword(pass);
 						mSession.setIslogin(true);
-
-
 						boolean flag = uService.login(userid, password);
 						myapplication.setUserId(userid);
 						myapplication.setPassword(password);
@@ -278,14 +360,12 @@ public class LoginActivity extends BaseActivity implements OnFocusChangeListener
 				new Handler().postDelayed(new Runnable() {
 					@Override
 					public void run() {
-						// TODO Auto-generated method stub
-						mLoadView.setStatue(LoadingView.NO_NETWORK);
+					mLoadView.setStatue(LoadingView.NO_NETWORK);
 					}
 				}, 5 * 1000);
 			}else {
                 msg = getString(R.string.error_login_other);
 				Utils.makeEventToast(getApplicationContext(), msg, false);
-
 			}
             break;
         default:
@@ -339,8 +419,6 @@ public class LoginActivity extends BaseActivity implements OnFocusChangeListener
         return true;
     }
 
-
-
 	@Override
 	public void onFocusChange(View v, boolean flag) {
         switch (v.getId()) {
@@ -359,7 +437,6 @@ public class LoginActivity extends BaseActivity implements OnFocusChangeListener
         }
     }
 
-
 	//刷新界面方法
 	@Override
 	public void refresh() {
@@ -372,6 +449,5 @@ public class LoginActivity extends BaseActivity implements OnFocusChangeListener
 				MarketAPI.getSystemInfo(getApplicationContext(), LoginActivity.this);
 			}
 		}, 1 * 1000);
-
 	}
 }

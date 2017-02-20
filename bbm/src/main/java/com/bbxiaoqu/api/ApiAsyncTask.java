@@ -313,6 +313,42 @@ public class ApiAsyncTask extends AsyncTask<Void, Void, Object> {
             }
             String userid=requestParams.get("_userid").toString();
             requestUrl=requestUrl+"?userid="+userid;
+        }else if (mReuqestAction==MarketAPI.ACTION_GETUSERVISIBLERANGE)
+        {
+            HashMap<String, Object> requestParams = null;
+            if (Parameter instanceof HashMap) {
+                requestParams = (HashMap<String, Object>) Parameter;
+            }
+            String country=requestParams.get("_country").toString();
+            String province=requestParams.get("_province").toString();
+            String city=requestParams.get("_city").toString();
+            String district=requestParams.get("_district").toString();
+            String street=requestParams.get("_street").toString();
+            requestUrl=requestUrl+"?country="+ country +"&province="+province+"&city="+city+"&district="+district+"&street="+street;
+        }else if (mReuqestAction==MarketAPI.ACTION_GETUSERVISIBLECOMMUNITY)
+        {
+            HashMap<String, Object> requestParams = null;
+            if (Parameter instanceof HashMap) {
+                requestParams = (HashMap<String, Object>) Parameter;
+            }
+            String userid=requestParams.get("_userid").toString();
+            requestUrl=requestUrl+"?userid="+ userid;
+        }else if (mReuqestAction==MarketAPI.ACTION_DAILYLOGIN)
+        {
+            HashMap<String, Object> requestParams = null;
+            if (Parameter instanceof HashMap) {
+                requestParams = (HashMap<String, Object>) Parameter;
+            }
+            String userid=requestParams.get("_userid").toString();
+            requestUrl=requestUrl+"?userid="+ userid;
+        }else if (mReuqestAction==MarketAPI.ACTION_GETSHOPINFO)
+        {
+            HashMap<String, Object> requestParams = null;
+            if (Parameter instanceof HashMap) {
+                requestParams = (HashMap<String, Object>) Parameter;
+            }
+            String userid=requestParams.get("_userid").toString();
+            requestUrl=requestUrl+"?userid="+ userid;
         }
         return requestUrl;
     }

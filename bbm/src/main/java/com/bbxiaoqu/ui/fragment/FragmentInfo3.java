@@ -135,6 +135,7 @@ public class FragmentInfo3 extends Fragment  implements NewListViewAdapter.Callb
 							item.put("sendnickname", String.valueOf(customJson.getString("username").toString()));
 							item.put("headface", String.valueOf(customJson.getString("headface").toString()));
 							item.put("sex", String.valueOf(customJson.getString("sex").toString()));
+							item.put("score", String.valueOf(customJson.getString("score").toString()));
 							item.put("community", String.valueOf(customJson.getString("community").toString()));
 							item.put("city", String.valueOf(customJson.getString("city").toString()));
 							item.put("street", String.valueOf(customJson.getString("street").toString()));

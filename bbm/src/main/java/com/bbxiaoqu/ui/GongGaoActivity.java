@@ -34,7 +34,7 @@ public class GongGaoActivity extends BaseActivity {
 		String guid = Bundle1.getString("guid");
 
 		webView =(WebView)findViewById(R.id.webView);
-		webView.loadUrl("http://api.bbxiaoqu.com//wap/gonggao.php?id="+guid);
+		webView.loadUrl("https://api.bbxiaoqu.com/wap/gonggao.php?id="+guid);
 		//启用支持javascript
 		WebSettings settings = webView.getSettings();
 		settings.setJavaScriptEnabled(true);

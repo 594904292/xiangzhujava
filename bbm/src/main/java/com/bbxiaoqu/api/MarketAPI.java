@@ -22,6 +22,7 @@ import java.util.List;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
+import com.baidu.location.BDLocationListener;
 import com.bbxiaoqu.api.ApiAsyncTask.ApiRequestListener;
 
 import android.content.Context;
@@ -42,7 +43,7 @@ public class MarketAPI {
     /** 机锋市场API host地址 */
     public static final String API_BASE_URL = 
         // real host
-      "http://api.bbxiaoqu.com/";
+      "https://api.bbxiaoqu.com/";
         // test host
 
      // 机锋市场 API URLS
@@ -75,9 +76,16 @@ public class MarketAPI {
              API_BASE_URL + "myrank_v1.php",
              // ACTION_GETRANK
              API_BASE_URL + "rank_v1.php",
-
              // ACTION_GETUSERSUMMARYINFO
-             API_BASE_URL + "getusersummary.php"
+             API_BASE_URL + "getusersummary.php",
+
+             API_BASE_URL + "getuservisiblerange.php",
+
+             API_BASE_URL + "getuservisiblecommunity.php",
+
+             API_BASE_URL + "dailylogin.php",
+
+             API_BASE_URL + "getshopinfo.php",
      };
     
     /** 登录 */
@@ -110,6 +118,20 @@ public class MarketAPI {
     public static final int ACTION_RANK = 13;
     /**获取系统服务器信息 */
     public static final int ACTION_GETUERSUMMARY = 14;
+    /**获取用户可见范围 */
+    public static final int ACTION_GETUSERVISIBLERANGE = 15;
+    /**获取用户所在小区 */
+    public static final int ACTION_GETUSERVISIBLECOMMUNITY = 16;
+
+    /**每天报道 */
+    public static final int ACTION_DAILYLOGIN = 17;
+
+
+    /**每天报道 */
+    public static final int ACTION_GETSHOPINFO = 18;
+
+
+
     /**
 	 * Register API<br>
 	 */
@@ -278,4 +300,37 @@ public class MarketAPI {
         params.put("_userid", userid);
         new ApiAsyncTask(context,ACTION_GETUERSUMMARY, handler, params).execute();
     }
+
+
+    public static void GetUserVisibleRang(Context context, ApiRequestListener handler, String country, String province, String city, String district, String street) {
+        final HashMap<String, Object> params = new HashMap<String, Object>(7);
+        params.put("_country", country);
+        params.put("_province", province);
+        params.put("_city", city);
+        params.put("_district", district);
+        params.put("_street", street);
+        new ApiAsyncTask(context,ACTION_GETUSERVISIBLERANGE, handler, params).execute();
+    }
+
+
+
+    public static void GetUserVisibleCommunity(Context context, ApiRequestListener handler,String userid) {
+        final HashMap<String, Object> params = new HashMap<String, Object>(7);
+        params.put("_userid", userid);
+        new ApiAsyncTask(context,ACTION_GETUSERVISIBLECOMMUNITY, handler, params).execute();
+    }
+
+    public static void DAILYLOGIN(Context context, ApiRequestListener handler,String userid) {
+        final HashMap<String, Object> params = new HashMap<String, Object>(7);
+        params.put("_userid", userid);
+        new ApiAsyncTask(context,ACTION_DAILYLOGIN, handler, params).execute();
+    }
+
+    public static void GetShopInfo(Context context, ApiRequestListener handler,String userid) {
+        final HashMap<String, Object> params = new HashMap<String, Object>(7);
+        params.put("_userid", userid);
+        new ApiAsyncTask(context,ACTION_GETSHOPINFO, handler, params).execute();
+    }
+
+
 }

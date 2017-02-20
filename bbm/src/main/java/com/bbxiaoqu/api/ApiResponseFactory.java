@@ -173,6 +173,26 @@ public class ApiResponseFactory {
 				requestMethod = "ACTION_GETUERSUMMARY";
 				result = parseResult(in);
 				break;
+			case MarketAPI.ACTION_GETUSERVISIBLERANGE:
+				// 很多条消息
+				requestMethod = "ACTION_GETUERSUMMARY";
+				result = parseResult(in);
+				break;
+			case MarketAPI.ACTION_GETUSERVISIBLECOMMUNITY:
+				// 很多条消息
+				requestMethod = "ACTION_GETUERSUMMARY";
+				result = parseResult(in);
+				break;
+			case MarketAPI.ACTION_DAILYLOGIN:
+				// 很多条消息
+				requestMethod = "ACTION_GETUERSUMMARY";
+				result = parseResult(in);
+				break;
+			case MarketAPI.ACTION_GETSHOPINFO:
+				// 很多条消息
+				requestMethod = "ACTION_GETSHOPINFO";
+				result = parseResult(in);
+				break;
 			default:
 		    break;
 		}

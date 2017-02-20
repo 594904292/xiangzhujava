@@ -29,6 +29,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.content.res.Resources.Theme;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.util.Log;
@@ -302,7 +303,7 @@ public class DemoApplication extends Application {
 	
 
 	public String getlocalhost() {
-		return "http://api.bbxiaoqu.com/";
+		return "https://api.bbxiaoqu.com/";
 	}
 	
 
@@ -431,4 +432,14 @@ public class DemoApplication extends Application {
 			}
 		}
 	};
+//
+//	Typeface tf=null;
+//	public Typeface getHannotateSCfont()
+//	{
+//		String fontPath = "font/HannotateSC-W5.ttf";
+//		if(tf==null) {
+//			tf = Typeface.createFromAsset(this.getAssets(), fontPath);
+//		}
+//		return tf;
+//	}
 }

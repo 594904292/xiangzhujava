@@ -38,7 +38,7 @@ public class SendCrashActivity extends BaseActivity implements OnRefreshListener
 	Button upload_btn;
 	Button return_btn;
 	private static String localFileUrl = "";
-	private static final String uploadUrl = "http://api.bbxiaoqu.com/api/ReceiveCrash.php";
+	private static final String uploadUrl = "https://api.bbxiaoqu.com/api/ReceiveCrash.php";
 	private TimeCount time;
 	View view;
 	LoadingView mLoadView;
@@ -70,7 +70,7 @@ public class SendCrashActivity extends BaseActivity implements OnRefreshListener
 		});
 
 
-		time = new TimeCount(10000, 1000);//构造CountDownTimer对象
+		time = new TimeCount(3000, 1000);//构造CountDownTimer对象
 		time.start();//开始计时
 
 		if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) 

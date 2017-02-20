@@ -320,6 +320,10 @@
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-xhdpi\\xz_fang_icon.png"
     },
     {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\jifen.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-xhdpi\\jifen.png"
+    },
+    {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\xz_si_icon.png",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-xhdpi\\xz_si_icon.png"
     },
@@ -384,12 +388,12 @@
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-xhdpi\\xz_denglu_icon.png"
     },
     {
-        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\xz_wo_icon.png",
-        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-xhdpi\\xz_wo_icon.png"
-    },
-    {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\xz_y1_icon.png",
         "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-xhdpi\\xz_y1_icon.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\xz_wo_icon.png",
+        "source": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\src\\main\\res\\mipmap-xhdpi\\xz_wo_icon.png"
     },
     {
         "merged": "F:\\AndroidStudio\\bbxiaoquforandroid\\bbm\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\xz_pic_noimg.png",

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical" >
+
+    <include
+        android:id="@+id/top_menu"
+        layout="@layout/top_menu_publish" />
+
+
+    <RelativeLayout
+        android:id="@+id/row1"
+        android:layout_below="@+id/top_menu"
+        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/myProgress"
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <ProgressBar
+                android:id="@+id/myProgressBar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/myProgressBar1Tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/myProgressBar1Tip1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mymainview"
+            android:layout_below="@+id/myProgress"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <RelativeLayout
+                android:id="@+id/edit"
+                android:layout_below="@+id/top_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical" >
+            <EditText
+                android:id="@+id/content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_edittext"
+                android:ems="10"
+                android:gravity="top"
+                android:hint="@string/bangbanginfo"
+                android:lines="5"
+                android:textColorHint ="#E2E2E7"
+                android:textColor="@color/edit_common_text"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="10dp"
+                android:padding="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp">
+                <requestFocus />
+            </EditText>
+            <TextView
+                android:text="0/200"
+                android:textColor="@color/gray_light"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|right"
+                android:id="@+id/chCounterText"
+                android:paddingRight="15dp"
+                android:layout_marginTop="5dp" />
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/layout_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                android:gravity="center_horizontal"
+                android:orientation="vertical" />
+
+
+        </LinearLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

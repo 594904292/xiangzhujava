@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <include
+        android:id="@+id/top_menu"
+        layout="@layout/top_menu_publish" />
+    <RelativeLayout
+        android:id="@+id/row1"
+        android:layout_below="@+id/top_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+    <com.baidu.mapapi.map.MapView android:layout_width="match_parent" android:layout_height="match_parent"
+        android:id="@+id/mapView">
+
+    </com.baidu.mapapi.map.MapView>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:drawableLeft="@android:drawable/ic_dialog_map" android:gravity="center_vertical"
+        android:padding="5dp" android:layout_marginLeft="40dp"
+        android:id="@+id/address" android:background="@drawable/shape_bcg_btn"
+        android:layout_marginRight="40dp" android:layout_marginTop="20dp"/>
+
+    <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp" android:id="@+id/mylocation"
+        android:background="@null" android:padding="5dp" android:contentDescription="@null"
+        android:src="@android:drawable/ic_menu_mylocation"/>
+        </RelativeLayout>
+</RelativeLayout>

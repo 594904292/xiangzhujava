@@ -305,7 +305,7 @@ public class InfoPlActivity extends Activity {
 						holder_img = (ViewHolder)convertView.getTag();
 					}*/
 					convertView.setTag(dataList.get(position).get("guid").toString().trim());
-					String headfaceurl = "http://api.bbxiaoqu.com/uploads/"+dataList.get(position).get("headface").toString();
+					String headfaceurl = "https://api.bbxiaoqu.com/uploads/"+dataList.get(position).get("headface").toString();
 					if(dataList.get(position).get("headface").toString().length ()>0) {
 						ImageLoader.getInstance ().displayImage (headfaceurl, holder_img.headface, ImageOptions.getOptions ());
 					}else

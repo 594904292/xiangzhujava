@@ -126,6 +126,28 @@
                 android:baselineAligned="false"
                 android:layout_marginTop="20dp">
                 <LinearLayout
+                    android:id="@+id/line_0"
+                    android:layout_weight="1.0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/tel0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/xz_convenience_icon"
+                        android:textColor="@color/btn_common_text"
+                        android:layout_gravity="center_horizontal" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="便民"
+                        android:id="@+id/convenience"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginTop="5dp" />
+                </LinearLayout>
+                <LinearLayout
                     android:id="@+id/line_1"
                     android:layout_weight="1.0"
                     android:layout_width="wrap_content"
